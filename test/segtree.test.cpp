@@ -5,18 +5,22 @@
 
 #include "../data-structure/segtree.hpp"
 
-int fx(int a,int b){
-    return std::min(a,b);
-}
+using S = int;
+S op(S a,S b){return std::min(a,b);}
+S e(){return INT32_MAX;}
 
 int main(){
     int N,Q;
     std::cin >> N >> Q;
-    SegTree<int> S(N,2147483647,fx);
+    segtree<S,op,e> st(N);
     for(int i = 0;i < Q;i++){
         int t,a,b;
         std::cin >> t >> a >> b;
-        if(t == 0)S.update(a,b);
-        if(t == 1)std::cout << S.query(a,b + 1) << "\n";
+        if(t == 0){
+            st.set(a,b);
+        }
+        if(t == 1){
+            std::cout << st.prod(a,b + 1) << "\n";
+        }
     }
 }

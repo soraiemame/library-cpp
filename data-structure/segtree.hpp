@@ -1,71 +1,111 @@
 #ifndef SORAIE_SEGTREE
 #define SORAIE_SEGTREE
 
-#include<vector>
-#include<functional>
-#include<assert.h>
+#include <algorithm>
+#include <cassert>
+#include <vector>
 
-template<class T>
-struct SegTree{
-    using fx = std::function<T(T,T)>;
-    int n;
-    std::vector<T> dat;
-    T e;
-    fx f;
-    SegTree(int n_,T e_,fx f_):e(e_),f(f_){
-        int x = 1;
-        while(x < n_)x <<= 1;
-        n = x;
-        dat = std::vector<T>(x * 2 - 1,e);
+template<class S,S (*op)(S,S),S (*e)()>
+struct segtree{
+    segtree() : segtree(0) {}
+    explicit segtree(int n) : segtree(std::vector<S>(n, e())) {}
+    explicit segtree(const std::vector<S>& v) : _n(int(v.size())) {
+        log = 0,size = 1;
+        while(size < _n)size <<= 1,log++;
+        size = 1 << log;
+        d = std::vector<S>(2 * size,e());
+        for (int i = 0;i < _n;i++)d[size + i] = v[i];
+        for (int i = size - 1;i >= 1;i--)update(i);
     }
-    void set(int m,T a){
-        assert(0 <= m && m < n);
-        dat[m + n - 1] = a;
+
+    void set(int p, S x){
+        assert(0 <= p && p < _n);
+        p += size;
+        d[p] = x;
+        for(int i = 1;i <= log;i++)update(p >> i);
     }
-    void build(){
-        for(int i = n - 2;i >= 0;i--){
-            dat[i] = f(dat[i * 2 + 1],dat[i * 2 + 2]);
+
+    S get(int p) const {
+        assert(0 <= p && p < _n);
+        return d[p + size];
+    }
+
+    S prod(int l, int r) const {
+        assert(0 <= l && l <= r && r <= _n);
+        S sml = e(),smr = e();
+        l += size;
+        r += size;
+
+        while(l < r){
+            if(l & 1)sml = op(sml,d[l++]);
+            if(r & 1)smr = op(d[--r],smr);
+            l >>= 1;
+            r >>= 1;
         }
+        return op(sml,smr);
     }
-    void update(int m,T a){
-        assert(0 <= m && m < n);
-        m += n - 1;
-        dat[m] = a;
-        while(m > 0){
-            m = (m - 1) / 2;
-            dat[m] = f(dat[m * 2 + 1],dat[m * 2 + 2]);
-        }
+
+    S all_prod()const{return d[1];}
+
+    template <bool (*f)(S)> int max_right(int l) const {
+        return max_right(l, [](S x) { return f(x); });
     }
-    void add(int m,T a){
-        assert(0 <= m && m < n);
-        m += n - 1;
-        dat[m] = a;
-        while(m > 0){
-            m = (m - 1) / 2;
-            dat[m] = f(dat[m * 2 + 1],dat[m * 2 + 2]);
-        }
+    template <class F> int max_right(int l, F f) const {
+        assert(0 <= l && l <= _n);
+        assert(f(e()));
+        if (l == _n) return _n;
+        l += size;
+        S sm = e();
+        do {
+            while (l % 2 == 0) l >>= 1;
+            if (!f(op(sm, d[l]))) {
+                while (l < size) {
+                    l = (2 * l);
+                    if (f(op(sm, d[l]))) {
+                        sm = op(sm, d[l]);
+                        l++;
+                    }
+                }
+                return l - size;
+            }
+            sm = op(sm, d[l]);
+            l++;
+        } while ((l & -l) != l);
+        return _n;
     }
-    T query(int a,int b,int k,int l,int r){
-        if(a >= r || b <= l){
-            return e;
-        }
-        else if(a <= l && r <= b){
-            return dat[k];
-        }
-        else{
-            T L = query(a,b,k * 2 + 1,l,(l + r) / 2);
-            T R = query(a,b,k * 2 + 2,(l + r) / 2,r);
-            return f(L,R);
-        }
+
+    template <bool (*f)(S)> int min_left(int r) const {
+        return min_left(r, [](S x) { return f(x); });
     }
-    T query(int a,int b){
-        assert(0 <= a && a < n && 0 < b && b <= n && a <= b);
-        return query(a,b,0,0,n);
+    template <class F> int min_left(int r, F f) const {
+        assert(0 <= r && r <= _n);
+        assert(f(e()));
+        if (r == 0) return 0;
+        r += size;
+        S sm = e();
+        do {
+            r--;
+            while (r > 1 && (r % 2)) r >>= 1;
+            if (!f(op(d[r], sm))) {
+                while (r < size) {
+                    r = (2 * r + 1);
+                    if (f(op(d[r], sm))) {
+                        sm = op(d[r], sm);
+                        r--;
+                    }
+                }
+                return r + 1 - size;
+            }
+            sm = op(d[r], sm);
+        } while ((r & -r) != r);
+        return 0;
     }
-    T get(int a){
-        assert(0 <= a && a < n);
-        return dat[a + n - 1];
-    }
+
+  private:
+    int _n,size,log;
+    std::vector<S> d;
+
+    void update(int k){d[k] = op(d[2 * k],d[2 * k + 1]);}
 };
 
 #endif /*SORAIE_SEGTREE*/
