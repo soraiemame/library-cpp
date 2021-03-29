@@ -1,4 +1,5 @@
 [![Actions Status](https://github.com/soraiemame/library-cpp/workflows/verify/badge.svg)](https://github.com/soraiemame/library-cpp/actions)
+[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://soraiemame.github.io/library-cpp/)
 
 # これは何？
 これはsoraieのライブラリです。([Twitter](https://twitter.com/soraie_),[AtCoder](https://atcoder.jp/users/soraie))  
