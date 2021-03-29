@@ -1,3 +1,3 @@
-# this is .verify-helper/docs/index.md!!!!
+## description
 
-teststestestestse
+This is soraie's library for competitive programing written by C++.

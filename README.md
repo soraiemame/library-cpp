@@ -2,8 +2,9 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://soraiemame.github.io/library-cpp/)
 
 # これは何？
-これはsoraieのライブラリです。([Twitter](https://twitter.com/soraie_),[AtCoder](https://atcoder.jp/users/soraie))  
+これはsoraieのライブラリです。([Twitter](https://twitter.com/soraie_),[AtCoder](https://atcoder.jp/users/soraie))
 
+<!-- 
 # 目次
 - [これは何？](#これは何？)
 - [目次](#目次)
@@ -274,4 +275,4 @@ NTT のソルバーを生成する
 vector<mint> convolution(vector<mint> A,vector<mint> B)
 ```
 A と B を畳みこんだ結果 mod. mod を求める
-
+ -->
