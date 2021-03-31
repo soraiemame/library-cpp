@@ -3,19 +3,19 @@
 #include <iostream>
 #include <vector>
 
-#include "../graph/dijkstra.hpp"
+#include "../../graph/dijkstra.hpp"
 
 int main(){
     int N,M,S;
     std::cin >> N >> M >> S;
-    std::vector<std::vector<edge>> G(N);
+    std::vector<std::vector<edge<>>> G(N);
     for(int i = 0;i < M;i++){
-        int a,b;e_t c;
+        int a,b;long long c;
         std::cin >> a >> b >> c;
         G[a].push_back({b,c});
     }
-    const e_t INF = 1LL << 60;
-    auto ans = dijkstra(G,{S},INF);
+    const long long INF = 1LL << 60;
+    auto ans = get_dist(G,S,INF);
     for(int i = 0;i < N;i++){
         if(ans[i] == INF)std::cout << "INF\n";
         else std::cout << ans[i] << "\n";

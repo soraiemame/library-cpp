@@ -7,9 +7,9 @@
 template<class T>
 std::vector<int> LIS(const std::vector<T>& vec){
     int n = vec.size();
-    std::vector<int> memo(n,INT32_MAX);
+    std::vector<int> memo(n,__INT32_MAX__);
     for(T a : vec)*std::lower_bound(memo.begin(),memo.end(),a) = a;
-    return std::vector<int>(memo.begin(),std::lower_bound(memo.begin(),memo.end(),INT32_MAX));
+    return std::vector<int>(memo.begin(),std::lower_bound(memo.begin(),memo.end(),__INT32_MAX__));
 }
 template<class T>
 std::vector<int> LDS(const std::vector<T>& _vec){

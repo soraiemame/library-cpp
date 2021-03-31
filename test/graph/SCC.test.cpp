@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "../graph/SCC.hpp"
+#include "../../graph/SCC.hpp"
 
 int main(){
     int N,M;

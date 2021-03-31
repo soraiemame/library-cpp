@@ -1,16 +1,18 @@
 #ifndef SORAIE_GRAPH_ALIAS
 #define SORAIE_GRAPH_ALIAS
 
-#include <vector>
 #include <iostream>
 
-using e_t = long long;
-template<class T>
-using Graph = std::vector<std::vector<T>>;
-struct edge{int to;e_t cost;};
-std::ostream &operator<<(std::ostream os,edge& a){return os << "{" << a.to << "," << a.cost << "}";}
-
-struct edge2{int from,to;e_t cost;};
-std::ostream &operator<<(std::ostream os,edge2& a){return os << "{" << a.from << "->" << a.to << "," << a.cost << "}";}
+template<class T = long long>
+struct edge{
+    int from,to;T cost;
+    edge(){}
+    edge(int to,T cost):from(-1),to(to),cost(cost){}
+    edge(int from,int to,T cost):from(from),to(to),cost(cost){}
+    friend std::ostream &operator<<(std::ostream &os,const edge& a){
+        if(a.from == -1)return os << "{" << a.to << "," << a.cost << "}";
+        else return os << "{" << a.from << "->" << a.to << "," << a.cost << "}";
+    }
+};
 
 #endif /*SORAIE_GRAPH_ALIAS*/
