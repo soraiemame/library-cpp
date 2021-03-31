@@ -6,102 +6,57 @@ data:
     path: algorithm/minimum_spanning_tree.hpp
     title: algorithm/minimum_spanning_tree.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/bellman_ford.hpp
-    title: graph/bellman_ford.hpp
-  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: graph/dijkstra.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/warshall_floyd.hpp
-    title: graph/warshall_floyd.hpp
+    path: graph/spfa.hpp
+    title: graph/spfa.hpp
+  - icon: ':warning:'
+    path: test/graph/abstract_dijkstra.cpp
+    title: test/graph/abstract_dijkstra.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/bellman_ford.test.cpp
-    title: test/bellman_ford.test.cpp
+    path: test/graph/dijkstra.test.cpp
+    title: test/graph/dijkstra.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/dijkstra.test.cpp
-    title: test/dijkstra.test.cpp
+    path: test/graph/dijkstra2.test.cpp
+    title: test/graph/dijkstra2.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/warshall_floyd.test.cpp
-    title: test/warshall_floyd.test.cpp
+    path: test/graph/spfa.test.cpp
+    title: test/graph/spfa.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: '#line 1 "utils/graph_alias.hpp"
-
-
-
-
-    #include <vector>
-
-    #include <iostream>
-
-
-    using e_t = long long;
-
-    template<class T>
-
-    using Graph = std::vector<std::vector<T>>;
-
-    struct edge{int to;e_t cost;};
-
-    std::ostream &operator<<(std::ostream os,edge& a){return os << "{" << a.to <<
-    "," << a.cost << "}";}
-
-
-    struct edge2{int from,to;e_t cost;};
-
-    std::ostream &operator<<(std::ostream os,edge2& a){return os << "{" << a.from
-    << "->" << a.to << "," << a.cost << "}";}
-
-
-
-    '
-  code: '#ifndef SORAIE_GRAPH_ALIAS
-
-    #define SORAIE_GRAPH_ALIAS
-
-
-    #include <vector>
-
-    #include <iostream>
-
-
-    using e_t = long long;
-
-    template<class T>
-
-    using Graph = std::vector<std::vector<T>>;
-
-    struct edge{int to;e_t cost;};
-
-    std::ostream &operator<<(std::ostream os,edge& a){return os << "{" << a.to <<
-    "," << a.cost << "}";}
-
-
-    struct edge2{int from,to;e_t cost;};
-
-    std::ostream &operator<<(std::ostream os,edge2& a){return os << "{" << a.from
-    << "->" << a.to << "," << a.cost << "}";}
-
-
-    #endif /*SORAIE_GRAPH_ALIAS*/'
+  bundledCode: "#line 1 \"utils/graph_alias.hpp\"\n\n\n\n#include <iostream>\n\ntemplate<class\
+    \ T = long long>\nstruct edge{\n    int from,to;T cost;\n    edge(){}\n    edge(int\
+    \ to,T cost):from(-1),to(to),cost(cost){}\n    edge(int from,int to,T cost):from(from),to(to),cost(cost){}\n\
+    \    friend std::ostream &operator<<(std::ostream &os,const edge& a){\n      \
+    \  if(a.from == -1)return os << \"{\" << a.to << \",\" << a.cost << \"}\";\n \
+    \       else return os << \"{\" << a.from << \"->\" << a.to << \",\" << a.cost\
+    \ << \"}\";\n    }\n};\n\n\n"
+  code: "#ifndef SORAIE_GRAPH_ALIAS\n#define SORAIE_GRAPH_ALIAS\n\n#include <iostream>\n\
+    \ntemplate<class T = long long>\nstruct edge{\n    int from,to;T cost;\n    edge(){}\n\
+    \    edge(int to,T cost):from(-1),to(to),cost(cost){}\n    edge(int from,int to,T\
+    \ cost):from(from),to(to),cost(cost){}\n    friend std::ostream &operator<<(std::ostream\
+    \ &os,const edge& a){\n        if(a.from == -1)return os << \"{\" << a.to << \"\
+    ,\" << a.cost << \"}\";\n        else return os << \"{\" << a.from << \"->\" <<\
+    \ a.to << \",\" << a.cost << \"}\";\n    }\n};\n\n#endif /*SORAIE_GRAPH_ALIAS*/"
   dependsOn: []
   isVerificationFile: false
   path: utils/graph_alias.hpp
   requiredBy:
-  - graph/bellman_ford.hpp
-  - graph/warshall_floyd.hpp
+  - graph/spfa.hpp
   - graph/dijkstra.hpp
   - algorithm/minimum_spanning_tree.hpp
-  timestamp: '2021-02-12 10:22:38+09:00'
+  - test/graph/abstract_dijkstra.cpp
+  timestamp: '2021-03-31 10:49:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/warshall_floyd.test.cpp
-  - test/bellman_ford.test.cpp
-  - test/dijkstra.test.cpp
+  - test/graph/spfa.test.cpp
+  - test/graph/dijkstra2.test.cpp
+  - test/graph/dijkstra.test.cpp
 documentation_of: utils/graph_alias.hpp
 layout: document
 redirect_from:

@@ -27,25 +27,27 @@ data:
     \   }\n    bool same(int a,int b){\n        assert(0 <= a && a < n && 0 <= b &&\
     \ b < n);\n        return find(a) == find(b);\n    }\n    int size(int v){\n \
     \       assert(0 <= v && v < n);\n        return -dat[v];\n    }\n};\n\n\n#line\
-    \ 1 \"utils/graph_alias.hpp\"\n\n\n\n#line 5 \"utils/graph_alias.hpp\"\n#include\
-    \ <iostream>\n\nusing e_t = long long;\ntemplate<class T>\nusing Graph = std::vector<std::vector<T>>;\n\
-    struct edge{int to;e_t cost;};\nstd::ostream &operator<<(std::ostream os,edge&\
-    \ a){return os << \"{\" << a.to << \",\" << a.cost << \"}\";}\n\nstruct edge2{int\
-    \ from,to;e_t cost;};\nstd::ostream &operator<<(std::ostream os,edge2& a){return\
-    \ os << \"{\" << a.from << \"->\" << a.to << \",\" << a.cost << \"}\";}\n\n\n\
-    #line 9 \"algorithm/minimum_spanning_tree.hpp\"\n\nstd::pair<e_t,std::vector<edge2>>\
-    \ minimum_spanning_tree(const std::vector<edge2> &_es,bool sorted = false){\n\
-    \    std::vector<edge2> es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](edge2\
-    \ a,edge2 b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<e_t,std::vector<edge2>>\
-    \ res;\n    UnionFind UF(n);\n    for(edge2& e : es){\n        if(!UF.same(e.from,e.to)){\n\
+    \ 1 \"utils/graph_alias.hpp\"\n\n\n\n#include <iostream>\n\ntemplate<class T =\
+    \ long long>\nstruct edge{\n    int from,to;T cost;\n    edge(){}\n    edge(int\
+    \ to,T cost):from(-1),to(to),cost(cost){}\n    edge(int from,int to,T cost):from(from),to(to),cost(cost){}\n\
+    \    friend std::ostream &operator<<(std::ostream &os,const edge& a){\n      \
+    \  if(a.from == -1)return os << \"{\" << a.to << \",\" << a.cost << \"}\";\n \
+    \       else return os << \"{\" << a.from << \"->\" << a.to << \",\" << a.cost\
+    \ << \"}\";\n    }\n};\n\n\n#line 9 \"algorithm/minimum_spanning_tree.hpp\"\n\n\
+    template<class T>\nstd::pair<T,std::vector<edge2<T>>> minimum_spanning_tree(const\
+    \ std::vector<edge2<T>> &_es,bool sorted = false){\n    std::vector<edge2<T>>\
+    \ es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge2<T> a,const\
+    \ edge2<T> b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<T,std::vector<edge2<T>>>\
+    \ res;\n    UnionFind UF(n);\n    for(edge2<T>& e : es){\n        if(!UF.same(e.from,e.to)){\n\
     \            res.first += e.cost;\n            res.second.push_back(e);\n    \
     \    }\n    }\n    return res;\n}\n\n\n"
   code: "#ifndef SORAIE_MST\n#define SORAIE_MST\n\n#include <vector>\n#include <algorithm>\n\
     \n#include \"../data-structure/unionfind.hpp\"\n#include \"../utils/graph_alias.hpp\"\
-    \n\nstd::pair<e_t,std::vector<edge2>> minimum_spanning_tree(const std::vector<edge2>\
-    \ &_es,bool sorted = false){\n    std::vector<edge2> es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](edge2\
-    \ a,edge2 b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<e_t,std::vector<edge2>>\
-    \ res;\n    UnionFind UF(n);\n    for(edge2& e : es){\n        if(!UF.same(e.from,e.to)){\n\
+    \n\ntemplate<class T>\nstd::pair<T,std::vector<edge2<T>>> minimum_spanning_tree(const\
+    \ std::vector<edge2<T>> &_es,bool sorted = false){\n    std::vector<edge2<T>>\
+    \ es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge2<T> a,const\
+    \ edge2<T> b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<T,std::vector<edge2<T>>>\
+    \ res;\n    UnionFind UF(n);\n    for(edge2<T>& e : es){\n        if(!UF.same(e.from,e.to)){\n\
     \            res.first += e.cost;\n            res.second.push_back(e);\n    \
     \    }\n    }\n    return res;\n}\n\n#endif /*SORAIE_MST*/"
   dependsOn:
@@ -54,7 +56,7 @@ data:
   isVerificationFile: false
   path: algorithm/minimum_spanning_tree.hpp
   requiredBy: []
-  timestamp: '2021-02-16 19:02:32+09:00'
+  timestamp: '2021-03-31 10:49:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: algorithm/minimum_spanning_tree.hpp

@@ -14,7 +14,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
-  bundledCode: "#line 1 \"test/SCC.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
+  bundledCode: "#line 1 \"test/graph/SCC.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
     \n\n#include <iostream>\n\n#line 1 \"graph/SCC.hpp\"\n\n\n\n#include <vector>\n\
     \nstruct SCC{\nprivate:\n    int n,k;\n    std::vector<std::vector<int>> G,RG;\n\
     \    std::vector<bool> use;\n    std::vector<int> ret,topo;\n    void dfs1(int\
@@ -35,16 +35,16 @@ data:
     \        return res;\n    }\n    \n    SCC(int _n = 0){init(std::vector<std::vector<int>>(_n));}\n\
     \    SCC(const std::vector<std::vector<int>>& _G){init(_G);}\n    void add_edge(int\
     \ a,int b){\n        G[a].push_back(b);\n        RG[b].push_back(a);\n    }\n\
-    };\n\n\n#line 6 \"test/SCC.test.cpp\"\n\nint main(){\n    int N,M;\n    std::cin\
-    \ >> N >> M;\n    SCC scc(N);\n    for(int i = 0;i < M;i++){\n        int a,b;\n\
-    \        std::cin >> a >> b;\n        scc.add_edge(a,b);\n    }\n    scc.build();\n\
-    \    auto ans = scc.components();\n    std::cout << ans.size() << \"\\n\";\n \
-    \   for(auto x : ans){\n        std::cout << x.size();\n        for(int i = 0;i\
-    \ < int(x.size());i++)std::cout << \" \" << x[i];\n        std::cout << \"\\n\"\
-    ;\n    }\n}\n"
+    };\n\n\n#line 6 \"test/graph/SCC.test.cpp\"\n\nint main(){\n    int N,M;\n   \
+    \ std::cin >> N >> M;\n    SCC scc(N);\n    for(int i = 0;i < M;i++){\n      \
+    \  int a,b;\n        std::cin >> a >> b;\n        scc.add_edge(a,b);\n    }\n\
+    \    scc.build();\n    auto ans = scc.components();\n    std::cout << ans.size()\
+    \ << \"\\n\";\n    for(auto x : ans){\n        std::cout << x.size();\n      \
+    \  for(int i = 0;i < int(x.size());i++)std::cout << \" \" << x[i];\n        std::cout\
+    \ << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include <iostream>\n\
-    \n#include \"../graph/SCC.hpp\"\n\nint main(){\n    int N,M;\n    std::cin >>\
-    \ N >> M;\n    SCC scc(N);\n    for(int i = 0;i < M;i++){\n        int a,b;\n\
+    \n#include \"../../graph/SCC.hpp\"\n\nint main(){\n    int N,M;\n    std::cin\
+    \ >> N >> M;\n    SCC scc(N);\n    for(int i = 0;i < M;i++){\n        int a,b;\n\
     \        std::cin >> a >> b;\n        scc.add_edge(a,b);\n    }\n    scc.build();\n\
     \    auto ans = scc.components();\n    std::cout << ans.size() << \"\\n\";\n \
     \   for(auto x : ans){\n        std::cout << x.size();\n        for(int i = 0;i\
@@ -53,15 +53,15 @@ data:
   dependsOn:
   - graph/SCC.hpp
   isVerificationFile: true
-  path: test/SCC.test.cpp
+  path: test/graph/SCC.test.cpp
   requiredBy: []
-  timestamp: '2021-03-18 11:12:58+09:00'
+  timestamp: '2021-03-31 10:49:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/SCC.test.cpp
+documentation_of: test/graph/SCC.test.cpp
 layout: document
 redirect_from:
-- /verify/test/SCC.test.cpp
-- /verify/test/SCC.test.cpp.html
-title: test/SCC.test.cpp
+- /verify/test/graph/SCC.test.cpp
+- /verify/test/graph/SCC.test.cpp.html
+title: test/graph/SCC.test.cpp
 ---

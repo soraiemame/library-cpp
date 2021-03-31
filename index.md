@@ -114,11 +114,11 @@ data:
       path: graph/SCC.hpp
       title: graph/SCC.hpp
     - icon: ':heavy_check_mark:'
-      path: graph/bellman_ford.hpp
-      title: graph/bellman_ford.hpp
-    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: graph/dijkstra.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/spfa.hpp
+      title: graph/spfa.hpp
     - icon: ':heavy_check_mark:'
       path: graph/warshall_floyd.hpp
       title: graph/warshall_floyd.hpp
@@ -184,6 +184,11 @@ data:
     - icon: ':warning:'
       path: test/geometory/area_circle.cpp
       title: test/geometory/area_circle.cpp
+  - name: test/graph
+    pages:
+    - icon: ':warning:'
+      path: test/graph/abstract_dijkstra.cpp
+      title: test/graph/abstract_dijkstra.cpp
   - name: utils
     pages:
     - icon: ':heavy_check_mark:'
@@ -208,17 +213,8 @@ data:
       path: test/NTT_998244353.test.cpp
       title: test/NTT_998244353.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/SCC.test.cpp
-      title: test/SCC.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/bellman_ford.test.cpp
-      title: test/bellman_ford.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/binary_indexed_tree.test.cpp
       title: test/binary_indexed_tree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/dijkstra.test.cpp
-      title: test/dijkstra.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/prime.test.cpp
       title: test/prime.test.cpp
@@ -240,9 +236,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/unionfind.test.cpp
       title: test/unionfind.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/warshall_floyd.test.cpp
-      title: test/warshall_floyd.test.cpp
   - name: test/bigint
     pages:
     - icon: ':heavy_check_mark:'
@@ -325,6 +318,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/tangent_circle.test.cpp
       title: test/geometory/tangent_circle.test.cpp
+  - name: test/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/SCC.test.cpp
+      title: test/graph/SCC.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/dijkstra.test.cpp
+      title: test/graph/dijkstra.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/dijkstra2.test.cpp
+      title: test/graph/dijkstra2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/spfa.test.cpp
+      title: test/graph/spfa.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/warshall_floyd.test.cpp
+      title: test/graph/warshall_floyd.test.cpp
   - name: test/range-queries
     pages:
     - icon: ':heavy_check_mark:'

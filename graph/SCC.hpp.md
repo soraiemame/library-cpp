@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/SCC.test.cpp
-    title: test/SCC.test.cpp
+    path: test/graph/SCC.test.cpp
+    title: test/graph/SCC.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,7 +58,7 @@ data:
   timestamp: '2021-03-15 14:04:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/SCC.test.cpp
+  - test/graph/SCC.test.cpp
 documentation_of: graph/SCC.hpp
 layout: document
 redirect_from:
