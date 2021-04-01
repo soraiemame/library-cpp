@@ -152,8 +152,8 @@ data:
   timestamp: '2021-03-22 15:06:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/NTT_1000000007.test.cpp
   - test/NTT_998244353.test.cpp
+  - test/NTT_1000000007.test.cpp
 documentation_of: math/NTT_primitive_mod.hpp
 layout: document
 redirect_from:

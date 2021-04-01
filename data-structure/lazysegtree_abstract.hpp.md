@@ -162,9 +162,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/range-queries/RSQ_RAQ_2.test.cpp
+  - test/range-queries/RMQ_RUQ_2.test.cpp
   - test/range-queries/RSQ_RUQ_2.test.cpp
   - test/range-queries/RMQ_RAQ_2.test.cpp
-  - test/range-queries/RMQ_RUQ_2.test.cpp
 documentation_of: data-structure/lazysegtree_abstract.hpp
 layout: document
 redirect_from:

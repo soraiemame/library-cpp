@@ -51,16 +51,16 @@ data:
   isVerificationFile: false
   path: atcoder/internal_bit.hpp
   requiredBy:
-  - atcoder/convolution.hpp
   - atcoder/lazysegtree.hpp
+  - atcoder/convolution.hpp
   - atcoder/segtree.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/bigint/multipication2.test.cpp
   - test/bigint/remainder.test.cpp
-  - test/bigint/multipication.test.cpp
   - test/bigint/division.test.cpp
+  - test/bigint/multipication2.test.cpp
+  - test/bigint/multipication.test.cpp
 documentation_of: atcoder/internal_bit.hpp
 layout: document
 redirect_from:
