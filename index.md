@@ -85,6 +85,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/lazysegtree_utils.hpp
       title: data-structure/lazysegtree_utils.hpp
+    - icon: ':x:'
+      path: data-structure/lichaotree.hpp
+      title: data-structure/lichaotree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/segtree.hpp
       title: data-structure/segtree.hpp
@@ -215,6 +218,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary_indexed_tree.test.cpp
       title: test/binary_indexed_tree.test.cpp
+    - icon: ':x:'
+      path: test/lichaotree.test.cpp
+      title: test/lichaotree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/prime.test.cpp
       title: test/prime.test.cpp
