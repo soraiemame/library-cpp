@@ -30,7 +30,7 @@ int main(){
         if(t[i] == 0)cht.add_segment(query[i][0],query[i][1],query[i][2],query[i][3]);
         else{
             long long ans = cht.get(query[i][0]);
-            if(ans == 0)std::cout << "INFINITY\n";
+            if(ans == cht.linf)std::cout << "INFINITY\n";
             else std::cout << ans << "\n";
         }
     }
