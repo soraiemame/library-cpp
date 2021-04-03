@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lichaotree.hpp
     title: data-structure/lichaotree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
@@ -32,7 +32,7 @@ data:
     \    }\n        }\n    }\n    \npublic:\n    LiChaoTree(const std::vector<T>&\
     \ _xl){\n        xl = _xl;\n        xl.push_back(std::numeric_limits<T>::max());\n\
     \        xl.push_back(std::numeric_limits<T>::min());\n        std::sort(xl.begin(),xl.end());xl.erase(std::unique(xl.begin(),xl.end()),xl.end());\n\
-    \        int _n = xl.size();\n        n = 1;\n        while(n < _n))n <<= 1;\n\
+    \        int _n = xl.size();\n        n = 1;\n        while(n < _n)n <<= 1;\n\
     \        xl.resize(n,xl.back());\n        dat = std::vector<Line>(n << 1,Line(0,linf));\n\
     \    }\n    \n    void add_line(Line f){inner_update(f,0,0,n);}\n    void add_line(T\
     \ a,T b){inner_update(Line(a,b));}\n\n    // [lx,rx)\n    void add_segment(Line\
@@ -80,8 +80,8 @@ data:
   isVerificationFile: true
   path: test/lichaotree.test.cpp
   requiredBy: []
-  timestamp: '2021-04-03 15:12:31+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-03 15:14:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lichaotree.test.cpp
 layout: document

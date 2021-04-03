@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/lichaotree.test.cpp
     title: test/lichaotree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lichaotree.hpp\"\n\n\n\n#include <algorithm>\n\
@@ -27,7 +27,7 @@ data:
     \         l = m;\n            }\n        }\n    }\n    \npublic:\n    LiChaoTree(const\
     \ std::vector<T>& _xl){\n        xl = _xl;\n        xl.push_back(std::numeric_limits<T>::max());\n\
     \        xl.push_back(std::numeric_limits<T>::min());\n        std::sort(xl.begin(),xl.end());xl.erase(std::unique(xl.begin(),xl.end()),xl.end());\n\
-    \        int _n = xl.size();\n        n = 1;\n        while(n < _n))n <<= 1;\n\
+    \        int _n = xl.size();\n        n = 1;\n        while(n < _n)n <<= 1;\n\
     \        xl.resize(n,xl.back());\n        dat = std::vector<Line>(n << 1,Line(0,linf));\n\
     \    }\n    \n    void add_line(Line f){inner_update(f,0,0,n);}\n    void add_line(T\
     \ a,T b){inner_update(Line(a,b));}\n\n    // [lx,rx)\n    void add_segment(Line\
@@ -60,7 +60,7 @@ data:
     \         l = m;\n            }\n        }\n    }\n    \npublic:\n    LiChaoTree(const\
     \ std::vector<T>& _xl){\n        xl = _xl;\n        xl.push_back(std::numeric_limits<T>::max());\n\
     \        xl.push_back(std::numeric_limits<T>::min());\n        std::sort(xl.begin(),xl.end());xl.erase(std::unique(xl.begin(),xl.end()),xl.end());\n\
-    \        int _n = xl.size();\n        n = 1;\n        while(n < _n))n <<= 1;\n\
+    \        int _n = xl.size();\n        n = 1;\n        while(n < _n)n <<= 1;\n\
     \        xl.resize(n,xl.back());\n        dat = std::vector<Line>(n << 1,Line(0,linf));\n\
     \    }\n    \n    void add_line(Line f){inner_update(f,0,0,n);}\n    void add_line(T\
     \ a,T b){inner_update(Line(a,b));}\n\n    // [lx,rx)\n    void add_segment(Line\
@@ -81,8 +81,8 @@ data:
   isVerificationFile: false
   path: data-structure/lichaotree.hpp
   requiredBy: []
-  timestamp: '2021-04-03 15:12:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-04-03 15:14:25+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/lichaotree.test.cpp
 documentation_of: data-structure/lichaotree.hpp
