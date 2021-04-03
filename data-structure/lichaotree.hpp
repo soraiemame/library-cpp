@@ -45,8 +45,9 @@ public:
         xl.push_back(std::numeric_limits<T>::max());
         xl.push_back(std::numeric_limits<T>::min());
         std::sort(xl.begin(),xl.end());xl.erase(std::unique(xl.begin(),xl.end()),xl.end());
+        int _n = xl.size();
         n = 1;
-        while(n < xl.size())n <<= 1;
+        while(n < _n))n <<= 1;
         xl.resize(n,xl.back());
         dat = std::vector<Line>(n << 1,Line(0,linf));
     }
