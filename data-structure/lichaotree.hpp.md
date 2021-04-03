@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/lichaotree.test.cpp
     title: test/lichaotree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lichaotree.hpp\"\n\n\n\n#include <algorithm>\n\
@@ -80,7 +80,7 @@ data:
   path: data-structure/lichaotree.hpp
   requiredBy: []
   timestamp: '2021-04-03 15:07:18+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/lichaotree.test.cpp
 documentation_of: data-structure/lichaotree.hpp

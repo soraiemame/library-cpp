@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/lichaotree.hpp
     title: data-structure/lichaotree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
@@ -58,8 +58,8 @@ data:
     \        }\n    }\n    LiChaoTree<long long> cht(xl);\n    for(int i = 0;i < N;i++)cht.add_segment(A[i],B[i],L[i],R[i]);\n\
     \    for(int i = 0;i < Q;i++){\n        if(t[i] == 0)cht.add_segment(query[i][0],query[i][1],query[i][2],query[i][3]);\n\
     \        else{\n            long long ans = cht.get(query[i][0]);\n          \
-    \  if(ans == 0)std::cout << \"INFINITY\\n\";\n            else std::cout << ans\
-    \ << \"\\n\";\n        }\n    }\n}\n"
+    \  if(ans == cht.linf)std::cout << \"INFINITY\\n\";\n            else std::cout\
+    \ << ans << \"\\n\";\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\
     \n#include <iostream>\n#include <vector>\n#include <array>\n\n#include \"../data-structure/lichaotree.hpp\"\
     \n\nint main(){\n    int N,Q;\n    std::cin >> N >> Q;\n    std::vector<long long>\
@@ -72,15 +72,15 @@ data:
     \        }\n    }\n    LiChaoTree<long long> cht(xl);\n    for(int i = 0;i < N;i++)cht.add_segment(A[i],B[i],L[i],R[i]);\n\
     \    for(int i = 0;i < Q;i++){\n        if(t[i] == 0)cht.add_segment(query[i][0],query[i][1],query[i][2],query[i][3]);\n\
     \        else{\n            long long ans = cht.get(query[i][0]);\n          \
-    \  if(ans == 0)std::cout << \"INFINITY\\n\";\n            else std::cout << ans\
-    \ << \"\\n\";\n        }\n    }\n}"
+    \  if(ans == cht.linf)std::cout << \"INFINITY\\n\";\n            else std::cout\
+    \ << ans << \"\\n\";\n        }\n    }\n}"
   dependsOn:
   - data-structure/lichaotree.hpp
   isVerificationFile: true
   path: test/lichaotree.test.cpp
   requiredBy: []
-  timestamp: '2021-04-03 15:07:18+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-03 15:09:02+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/lichaotree.test.cpp
 layout: document
