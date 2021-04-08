@@ -8,16 +8,18 @@
 #include "../utils/graph_alias.hpp"
 
 template<class T>
-std::pair<T,std::vector<edge2<T>>> minimum_spanning_tree(const std::vector<edge2<T>> &_es,bool sorted = false){
-    std::vector<edge2<T>> es = _es;
-    if(!sorted)std::sort(es.begin(),es.end(),[](const edge2<T> a,const edge2<T> b){return a.cost < b.cost;});
-    int n = es.size();
-    std::pair<T,std::vector<edge2<T>>> res;
-    UnionFind UF(n);
-    for(edge2<T>& e : es){
+std::pair<T,std::vector<edge<T>>> minimum_spanning_tree(const std::vector<edge<T>> &_es,bool sorted = false){
+    std::vector<edge<T>> es = _es;
+    if(!sorted)std::sort(es.begin(),es.end(),[](const edge<T> a,const edge<T> b){return a.cost < b.cost;});
+    int n = 0;
+    for(auto&& e : es)n = std::max({n,e.from,e.to});
+    std::pair<T,std::vector<edge<T>>> res;
+    UnionFind UF(n + 1);
+    for(auto&& e : es){
         if(!UF.same(e.from,e.to)){
             res.first += e.cost;
             res.second.push_back(e);
+            UF.unite(e.from,e.to);
         }
     }
     return res;
