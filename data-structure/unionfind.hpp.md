@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/minimum_spanning_tree.hpp
     title: algorithm/minimum_spanning_tree.hpp
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/minimum_spanning_tree.test.cpp
+    title: test/minimum_spanning_tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/unionfind.test.cpp
     title: test/unionfind.test.cpp
@@ -46,6 +49,7 @@ data:
   timestamp: '2021-02-16 19:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/minimum_spanning_tree.test.cpp
   - test/unionfind.test.cpp
 documentation_of: data-structure/unionfind.hpp
 layout: document

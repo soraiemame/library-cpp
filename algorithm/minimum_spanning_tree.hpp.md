@@ -8,10 +8,13 @@ data:
     path: utils/graph_alias.hpp
     title: utils/graph_alias.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/minimum_spanning_tree.test.cpp
+    title: test/minimum_spanning_tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"algorithm/minimum_spanning_tree.hpp\"\n\n\n\n#include <vector>\n\
@@ -34,31 +37,35 @@ data:
     \  if(a.from == -1)return os << \"{\" << a.to << \",\" << a.cost << \"}\";\n \
     \       else return os << \"{\" << a.from << \"->\" << a.to << \",\" << a.cost\
     \ << \"}\";\n    }\n};\n\n\n#line 9 \"algorithm/minimum_spanning_tree.hpp\"\n\n\
-    template<class T>\nstd::pair<T,std::vector<edge2<T>>> minimum_spanning_tree(const\
-    \ std::vector<edge2<T>> &_es,bool sorted = false){\n    std::vector<edge2<T>>\
-    \ es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge2<T> a,const\
-    \ edge2<T> b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<T,std::vector<edge2<T>>>\
-    \ res;\n    UnionFind UF(n);\n    for(edge2<T>& e : es){\n        if(!UF.same(e.from,e.to)){\n\
+    template<class T>\nstd::pair<T,std::vector<edge<T>>> minimum_spanning_tree(const\
+    \ std::vector<edge<T>> &_es,bool sorted = false){\n    std::vector<edge<T>> es\
+    \ = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge<T> a,const\
+    \ edge<T> b){return a.cost < b.cost;});\n    int n = 0;\n    for(auto&& e : es)n\
+    \ = std::max({n,e.from,e.to});\n    std::pair<T,std::vector<edge<T>>> res;\n \
+    \   UnionFind UF(n + 1);\n    for(auto&& e : es){\n        if(!UF.same(e.from,e.to)){\n\
     \            res.first += e.cost;\n            res.second.push_back(e);\n    \
-    \    }\n    }\n    return res;\n}\n\n\n"
+    \        UF.unite(e.from,e.to);\n        }\n    }\n    return res;\n}\n\n\n"
   code: "#ifndef SORAIE_MST\n#define SORAIE_MST\n\n#include <vector>\n#include <algorithm>\n\
     \n#include \"../data-structure/unionfind.hpp\"\n#include \"../utils/graph_alias.hpp\"\
-    \n\ntemplate<class T>\nstd::pair<T,std::vector<edge2<T>>> minimum_spanning_tree(const\
-    \ std::vector<edge2<T>> &_es,bool sorted = false){\n    std::vector<edge2<T>>\
-    \ es = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge2<T> a,const\
-    \ edge2<T> b){return a.cost < b.cost;});\n    int n = es.size();\n    std::pair<T,std::vector<edge2<T>>>\
-    \ res;\n    UnionFind UF(n);\n    for(edge2<T>& e : es){\n        if(!UF.same(e.from,e.to)){\n\
+    \n\ntemplate<class T>\nstd::pair<T,std::vector<edge<T>>> minimum_spanning_tree(const\
+    \ std::vector<edge<T>> &_es,bool sorted = false){\n    std::vector<edge<T>> es\
+    \ = _es;\n    if(!sorted)std::sort(es.begin(),es.end(),[](const edge<T> a,const\
+    \ edge<T> b){return a.cost < b.cost;});\n    int n = 0;\n    for(auto&& e : es)n\
+    \ = std::max({n,e.from,e.to});\n    std::pair<T,std::vector<edge<T>>> res;\n \
+    \   UnionFind UF(n + 1);\n    for(auto&& e : es){\n        if(!UF.same(e.from,e.to)){\n\
     \            res.first += e.cost;\n            res.second.push_back(e);\n    \
-    \    }\n    }\n    return res;\n}\n\n#endif /*SORAIE_MST*/"
+    \        UF.unite(e.from,e.to);\n        }\n    }\n    return res;\n}\n\n#endif\
+    \ /*SORAIE_MST*/"
   dependsOn:
   - data-structure/unionfind.hpp
   - utils/graph_alias.hpp
   isVerificationFile: false
   path: algorithm/minimum_spanning_tree.hpp
   requiredBy: []
-  timestamp: '2021-03-31 10:49:51+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-04-08 21:36:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/minimum_spanning_tree.test.cpp
 documentation_of: algorithm/minimum_spanning_tree.hpp
 layout: document
 redirect_from:

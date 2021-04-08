@@ -5,10 +5,13 @@ data:
     path: data-structure/binary_indexed_tree.hpp
     title: data-structure/binary_indexed_tree.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/inversion_number.test.cpp
+    title: test/inversion_number.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"algorithm/inversion_number.hpp\"\n\n\n\n#include <vector>\n\
@@ -47,8 +50,9 @@ data:
   path: algorithm/inversion_number.hpp
   requiredBy: []
   timestamp: '2021-02-12 10:22:38+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/inversion_number.test.cpp
 documentation_of: algorithm/inversion_number.hpp
 layout: document
 redirect_from:

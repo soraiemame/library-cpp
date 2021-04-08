@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/minimum_spanning_tree.hpp
     title: algorithm/minimum_spanning_tree.hpp
   - icon: ':heavy_check_mark:'
@@ -24,6 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/spfa.test.cpp
     title: test/graph/spfa.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/minimum_spanning_tree.test.cpp
+    title: test/minimum_spanning_tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -54,6 +57,7 @@ data:
   timestamp: '2021-03-31 10:49:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/minimum_spanning_tree.test.cpp
   - test/graph/dijkstra2.test.cpp
   - test/graph/dijkstra.test.cpp
   - test/graph/spfa.test.cpp

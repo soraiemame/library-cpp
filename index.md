@@ -6,10 +6,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/LIS_LDS.hpp
       title: algorithm/LIS_LDS.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/inversion_number.hpp
       title: algorithm/inversion_number.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/minimum_spanning_tree.hpp
       title: algorithm/minimum_spanning_tree.hpp
   - name: atcoder
@@ -222,8 +222,14 @@ data:
       path: test/binary_indexed_tree.test.cpp
       title: test/binary_indexed_tree.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/inversion_number.test.cpp
+      title: test/inversion_number.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/lichaotree.test.cpp
       title: test/lichaotree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/minimum_spanning_tree.test.cpp
+      title: test/minimum_spanning_tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/prime.test.cpp
       title: test/prime.test.cpp

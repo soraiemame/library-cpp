@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/inversion_number.hpp
     title: algorithm/inversion_number.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/binary_indexed_tree.test.cpp
     title: test/binary_indexed_tree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/inversion_number.test.cpp
+    title: test/inversion_number.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -48,6 +51,7 @@ data:
   timestamp: '2021-02-09 19:39:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/inversion_number.test.cpp
   - test/binary_indexed_tree.test.cpp
 documentation_of: data-structure/binary_indexed_tree.hpp
 layout: document
