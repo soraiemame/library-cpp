@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: algorithm
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algorithm/LIS_LDS.hpp
       title: algorithm/LIS_LDS.hpp
     - icon: ':warning:'
@@ -209,6 +209,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/CHT.test.cpp
       title: test/CHT.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/LIS.test.cpp
+      title: test/LIS.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/NTT_1000000007.test.cpp
       title: test/NTT_1000000007.test.cpp
