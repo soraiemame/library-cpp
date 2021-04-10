@@ -11,11 +11,11 @@ struct modint{
     modint(long long a = 0):x((a % MOD + MOD) % MOD){}
     inline constexpr modint operator-()const noexcept{return modint(-x);}
     inline constexpr modint &operator+=(const modint &a)noexcept{
-        if ((x += a.x) >= MOD) x -= MOD;
+        if((x += a.x) >= MOD)x -= MOD;
         return *this;
     }
     inline constexpr modint &operator-=(const modint &a)noexcept{
-        if ((x -= a.x) < 0) x += MOD;
+        if((x -= a.x) < 0)x += MOD;
         return *this;
     }
     inline constexpr modint &operator*=(const modint &a)noexcept{
@@ -78,11 +78,11 @@ struct modint{
         os << a.x;
         return os;
     }
-    friend mint modpow(mint a,long long b)noexcept{
-        mint res(1);
-        while(b){
-            if(b & 1)res *= a;
-            a *= a;
+    inline constexpr mint pow(long long b)const noexcept{
+        mint res(1),mul(x);
+        while(b > 0){
+            if(b & 1)res *= mul;
+            mul *= mul;
             b >>= 1;
         }
         return res;
