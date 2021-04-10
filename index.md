@@ -143,6 +143,9 @@ data:
       path: math/bigint.hpp
       title: math/bigint.hpp
     - icon: ':warning:'
+      path: math/dynamic_modint.hpp
+      title: math/dynamic_modint.hpp
+    - icon: ':warning:'
       path: math/floor_ceil.hpp
       title: math/floor_ceil.hpp
     - icon: ':warning:'

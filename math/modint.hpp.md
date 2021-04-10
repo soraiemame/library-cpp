@@ -24,10 +24,10 @@ data:
     \ <iostream>\n\ntemplate<int MOD = 1000000007>\nstruct modint{\n    using mint\
     \ = modint<MOD>;\n    int x;\n    modint(long long a = 0):x((a % MOD + MOD) %\
     \ MOD){}\n    inline constexpr modint operator-()const noexcept{return modint(-x);}\n\
-    \    inline constexpr modint &operator+=(const modint &a)noexcept{\n        if\
-    \ ((x += a.x) >= MOD) x -= MOD;\n        return *this;\n    }\n    inline constexpr\
-    \ modint &operator-=(const modint &a)noexcept{\n        if ((x -= a.x) < 0) x\
-    \ += MOD;\n        return *this;\n    }\n    inline constexpr modint &operator*=(const\
+    \    inline constexpr modint &operator+=(const modint &a)noexcept{\n        if((x\
+    \ += a.x) >= MOD)x -= MOD;\n        return *this;\n    }\n    inline constexpr\
+    \ modint &operator-=(const modint &a)noexcept{\n        if((x -= a.x) < 0)x +=\
+    \ MOD;\n        return *this;\n    }\n    inline constexpr modint &operator*=(const\
     \ modint &a)noexcept{\n        x = (long long)(x) * a.x % MOD;\n        return\
     \ *this;\n    }\n    inline constexpr modint &operator++()noexcept{\n        x++;\n\
     \        if(x == MOD)x = 0;\n        return *this;\n    }\n    inline constexpr\
@@ -51,19 +51,19 @@ data:
     \ &operator>>(std::istream &is,modint &a) {\n        is >> a.x;\n        a.x =\
     \ (a.x % MOD + MOD) % MOD;\n        return is;\n    }\n    friend std::ostream\
     \ &operator<<(std::ostream &os,const modint &a){\n        os << a.x;\n       \
-    \ return os;\n    }\n    friend mint modpow(mint a,long long b)noexcept{\n   \
-    \     mint res(1);\n        while(b){\n            if(b & 1)res *= a;\n      \
-    \      a *= a;\n            b >>= 1;\n        }\n        return res;\n    }\n\n\
-    \    static constexpr int get_mod(){return MOD;}\n};\nusing modint1000000007 =\
-    \ modint<1'000'000'007>;\nusing modint998244353 = modint<998'244'353>;\n\n\n"
+    \ return os;\n    }\n    inline constexpr mint pow(long long b)const noexcept{\n\
+    \        mint res(1),mul(x);\n        while(b > 0){\n            if(b & 1)res\
+    \ *= mul;\n            mul *= mul;\n            b >>= 1;\n        }\n        return\
+    \ res;\n    }\n\n    static constexpr int get_mod(){return MOD;}\n};\nusing modint1000000007\
+    \ = modint<1'000'000'007>;\nusing modint998244353 = modint<998'244'353>;\n\n\n"
   code: "#ifndef SORAIE_MODINT\n#define SORAIE_MODINT\n\n#include <algorithm>\n#include\
     \ <iostream>\n\ntemplate<int MOD = 1000000007>\nstruct modint{\n    using mint\
     \ = modint<MOD>;\n    int x;\n    modint(long long a = 0):x((a % MOD + MOD) %\
     \ MOD){}\n    inline constexpr modint operator-()const noexcept{return modint(-x);}\n\
-    \    inline constexpr modint &operator+=(const modint &a)noexcept{\n        if\
-    \ ((x += a.x) >= MOD) x -= MOD;\n        return *this;\n    }\n    inline constexpr\
-    \ modint &operator-=(const modint &a)noexcept{\n        if ((x -= a.x) < 0) x\
-    \ += MOD;\n        return *this;\n    }\n    inline constexpr modint &operator*=(const\
+    \    inline constexpr modint &operator+=(const modint &a)noexcept{\n        if((x\
+    \ += a.x) >= MOD)x -= MOD;\n        return *this;\n    }\n    inline constexpr\
+    \ modint &operator-=(const modint &a)noexcept{\n        if((x -= a.x) < 0)x +=\
+    \ MOD;\n        return *this;\n    }\n    inline constexpr modint &operator*=(const\
     \ modint &a)noexcept{\n        x = (long long)(x) * a.x % MOD;\n        return\
     \ *this;\n    }\n    inline constexpr modint &operator++()noexcept{\n        x++;\n\
     \        if(x == MOD)x = 0;\n        return *this;\n    }\n    inline constexpr\
@@ -87,11 +87,11 @@ data:
     \ &operator>>(std::istream &is,modint &a) {\n        is >> a.x;\n        a.x =\
     \ (a.x % MOD + MOD) % MOD;\n        return is;\n    }\n    friend std::ostream\
     \ &operator<<(std::ostream &os,const modint &a){\n        os << a.x;\n       \
-    \ return os;\n    }\n    friend mint modpow(mint a,long long b)noexcept{\n   \
-    \     mint res(1);\n        while(b){\n            if(b & 1)res *= a;\n      \
-    \      a *= a;\n            b >>= 1;\n        }\n        return res;\n    }\n\n\
-    \    static constexpr int get_mod(){return MOD;}\n};\nusing modint1000000007 =\
-    \ modint<1'000'000'007>;\nusing modint998244353 = modint<998'244'353>;\n\n#endif\
+    \ return os;\n    }\n    inline constexpr mint pow(long long b)const noexcept{\n\
+    \        mint res(1),mul(x);\n        while(b > 0){\n            if(b & 1)res\
+    \ *= mul;\n            mul *= mul;\n            b >>= 1;\n        }\n        return\
+    \ res;\n    }\n\n    static constexpr int get_mod(){return MOD;}\n};\nusing modint1000000007\
+    \ = modint<1'000'000'007>;\nusing modint998244353 = modint<998'244'353>;\n\n#endif\
     \ /*SORAIE_MODINT*/"
   dependsOn: []
   isVerificationFile: false
@@ -99,7 +99,7 @@ data:
   requiredBy:
   - math/NTT_all_mod.hpp
   - math/NTT_primitive_mod.hpp
-  timestamp: '2021-04-10 16:51:45+09:00'
+  timestamp: '2021-04-10 17:20:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/NTT_998244353.test.cpp

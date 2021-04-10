@@ -56,9 +56,9 @@ data:
     \ntemplate<int MOD = 1000000007>\nstruct modint{\n    using mint = modint<MOD>;\n\
     \    int x;\n    modint(long long a = 0):x((a % MOD + MOD) % MOD){}\n    inline\
     \ constexpr modint operator-()const noexcept{return modint(-x);}\n    inline constexpr\
-    \ modint &operator+=(const modint &a)noexcept{\n        if ((x += a.x) >= MOD)\
-    \ x -= MOD;\n        return *this;\n    }\n    inline constexpr modint &operator-=(const\
-    \ modint &a)noexcept{\n        if ((x -= a.x) < 0) x += MOD;\n        return *this;\n\
+    \ modint &operator+=(const modint &a)noexcept{\n        if((x += a.x) >= MOD)x\
+    \ -= MOD;\n        return *this;\n    }\n    inline constexpr modint &operator-=(const\
+    \ modint &a)noexcept{\n        if((x -= a.x) < 0)x += MOD;\n        return *this;\n\
     \    }\n    inline constexpr modint &operator*=(const modint &a)noexcept{\n  \
     \      x = (long long)(x) * a.x % MOD;\n        return *this;\n    }\n    inline\
     \ constexpr modint &operator++()noexcept{\n        x++;\n        if(x == MOD)x\
@@ -82,14 +82,14 @@ data:
     \ &a)const noexcept{return x == a.x;}\n    friend std::istream &operator>>(std::istream\
     \ &is,modint &a) {\n        is >> a.x;\n        a.x = (a.x % MOD + MOD) % MOD;\n\
     \        return is;\n    }\n    friend std::ostream &operator<<(std::ostream &os,const\
-    \ modint &a){\n        os << a.x;\n        return os;\n    }\n    friend mint\
-    \ modpow(mint a,long long b)noexcept{\n        mint res(1);\n        while(b){\n\
-    \            if(b & 1)res *= a;\n            a *= a;\n            b >>= 1;\n \
-    \       }\n        return res;\n    }\n\n    static constexpr int get_mod(){return\
-    \ MOD;}\n};\nusing modint1000000007 = modint<1'000'000'007>;\nusing modint998244353\
-    \ = modint<998'244'353>;\n\n\n#line 9 \"math/NTT_primitive_mod.hpp\"\n\n//ex.\
-    \ (2013265921,137,27),(998244353,31,23),(469762049,30,26)\ntemplate<long long\
-    \ MOD,int base,int max_exp>\nstruct NTT_primitive{\n    using mint = modint<MOD>;\n\
+    \ modint &a){\n        os << a.x;\n        return os;\n    }\n    inline constexpr\
+    \ mint pow(long long b)const noexcept{\n        mint res(1),mul(x);\n        while(b\
+    \ > 0){\n            if(b & 1)res *= mul;\n            mul *= mul;\n         \
+    \   b >>= 1;\n        }\n        return res;\n    }\n\n    static constexpr int\
+    \ get_mod(){return MOD;}\n};\nusing modint1000000007 = modint<1'000'000'007>;\n\
+    using modint998244353 = modint<998'244'353>;\n\n\n#line 9 \"math/NTT_primitive_mod.hpp\"\
+    \n\n//ex. (2013265921,137,27),(998244353,31,23),(469762049,30,26)\ntemplate<long\
+    \ long MOD,int base,int max_exp>\nstruct NTT_primitive{\n    using mint = modint<MOD>;\n\
     \    std::vector<mint> bases,invs;\n    NTT_primitive(){\n        bases.resize(max_exp\
     \ + 1);invs.resize(max_exp + 1);\n        bases[max_exp] = base;\n        invs[max_exp]\
     \ = mint(base).inv();\n        for(int i = max_exp - 1;i >= 0;i--){\n        \
@@ -190,7 +190,7 @@ data:
   isVerificationFile: false
   path: math/NTT_all_mod.hpp
   requiredBy: []
-  timestamp: '2021-04-10 16:51:45+09:00'
+  timestamp: '2021-04-10 17:20:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/NTT_1000000007.test.cpp
