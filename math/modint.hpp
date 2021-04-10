@@ -4,10 +4,10 @@
 #include <algorithm>
 #include <iostream>
 
-template<long long MOD = 1000000007>
-struct modint {
+template<int MOD = 1000000007>
+struct modint{
     using mint = modint<MOD>;
-    long long x;
+    int x;
     modint(long long a = 0):x((a % MOD + MOD) % MOD){}
     inline constexpr modint operator-()const noexcept{return modint(-x);}
     inline constexpr modint &operator+=(const modint &a)noexcept{
@@ -19,7 +19,7 @@ struct modint {
         return *this;
     }
     inline constexpr modint &operator*=(const modint &a)noexcept{
-        (x *= a.x) %= MOD;
+        x = (long long)(x) * a.x % MOD;
         return *this;
     }
     inline constexpr modint &operator++()noexcept{
@@ -55,9 +55,9 @@ struct modint {
         return res *= a;
     }
     inline constexpr modint inv()const{
-        long long a = x,b = MOD,u = 1,v = 0;
+        int a = x,b = MOD,u = 1,v = 0,t;
         while(b){
-            long long t = a / b;
+            t = a / b;
             a -= t * b;std::swap(a,b);
             u -= t * v;std::swap(u,v);
         }
@@ -78,7 +78,6 @@ struct modint {
         os << a.x;
         return os;
     }
-    long long getmod(){return MOD;}
     friend mint modpow(mint a,long long b)noexcept{
         mint res(1);
         while(b){
@@ -88,8 +87,10 @@ struct modint {
         }
         return res;
     }
-};
-//using mint = modint<1'000'000'007>::mint;
 
+    static constexpr int get_mod(){return MOD;}
+};
+using modint1000000007 = modint<1'000'000'007>;
+using modint998244353 = modint<998'244'353>;
 
 #endif /*SORAIE_MODINT*/
