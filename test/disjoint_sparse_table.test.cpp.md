@@ -35,10 +35,10 @@ data:
     \    DisjointSparseTable(const std::vector<T>& dat){\n        _n = dat.size();\n\
     \        sz = 1;\n        log = 0;\n        while(sz < _n)sz <<= 1,log++;\n  \
     \      table = std::vector<std::vector<T>>(log,std::vector<T>(sz));\n        std::vector<T>\
-    \ _dat = dat;\n        _dat.resize(sz);\n        build(_dat);\n    }\n    T query(int\
-    \ l,int r)const{\n        assert(0 <= l && l < r && r <= _n);\n        r--;\n\
-    \        if(l == r)return table.back()[l];\n        int clz = msb(l ^ r);\n  \
-    \      int lev = log - clz - 1;\n        T res = op(table[lev][l],table[lev][r]);\n\
+    \ _dat = dat;\n        _dat.resize(sz);\n        build(_dat);\n    }\n    // [l,r)\n\
+    \    T query(int l,int r)const{\n        assert(0 <= l && l < r && r <= _n);\n\
+    \        r--;\n        if(l == r)return table.back()[l];\n        int clz = msb(l\
+    \ ^ r);\n        int lev = log - clz - 1;\n        T res = op(table[lev][l],table[lev][r]);\n\
     \        return res;\n    }\n    inline T operator[](int k)const{\n        assert(k\
     \ < _n);\n        return table.back()[k];\n    }\n};\n\n\n#line 7 \"test/disjoint_sparse_table.test.cpp\"\
     \n\nlong long op(long long a,long long b){return a + b;}\n\nint main(){\n    int\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: test/disjoint_sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2021-05-04 18:25:13+09:00'
+  timestamp: '2021-05-04 18:29:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/disjoint_sparse_table.test.cpp
