@@ -77,6 +77,9 @@ data:
       path: data-structure/binary_indexed_tree.hpp
       title: data-structure/binary_indexed_tree.hpp
     - icon: ':heavy_check_mark:'
+      path: data-structure/disjoint_sparse_table.hpp
+      title: data-structure/disjoint_sparse_table.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazysegtree.hpp
       title: data-structure/lazysegtree.hpp
     - icon: ':heavy_check_mark:'
@@ -142,6 +145,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/bigint.hpp
       title: math/bigint.hpp
+    - icon: ':warning:'
+      path: math/binomial.hpp
+      title: math/binomial.hpp
     - icon: ':warning:'
       path: math/dynamic_modint.hpp
       title: math/dynamic_modint.hpp
@@ -224,6 +230,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary_indexed_tree.test.cpp
       title: test/binary_indexed_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/disjoint_sparse_table.test.cpp
+      title: test/disjoint_sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/inversion_number.test.cpp
       title: test/inversion_number.test.cpp

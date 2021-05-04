@@ -44,13 +44,13 @@ data:
   path: math/math.hpp
   requiredBy:
   - math/NTT_all_mod.hpp
-  - math/NTT_primitive_mod.hpp
   - math/garner.hpp
+  - math/NTT_primitive_mod.hpp
   timestamp: '2021-02-08 12:56:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/NTT_998244353.test.cpp
   - test/NTT_1000000007.test.cpp
+  - test/NTT_998244353.test.cpp
 documentation_of: math/math.hpp
 layout: document
 redirect_from:

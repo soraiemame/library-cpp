@@ -167,8 +167,8 @@ data:
   timestamp: '2021-03-22 15:06:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/range_clamp_RAQ_RSQ.test.cpp
   - test/sqrt_decomposition.test.cpp
+  - test/range_clamp_RAQ_RSQ.test.cpp
 documentation_of: data-structure/sqrt_decomposition.hpp
 layout: document
 redirect_from:

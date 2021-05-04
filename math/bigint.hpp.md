@@ -316,11 +316,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/bigint/subtraction.test.cpp
-  - test/bigint/remainder.test.cpp
   - test/bigint/division.test.cpp
+  - test/bigint/remainder.test.cpp
   - test/bigint/multipication2.test.cpp
-  - test/bigint/multipication.test.cpp
   - test/bigint/addition.test.cpp
+  - test/bigint/multipication.test.cpp
 documentation_of: math/bigint.hpp
 layout: document
 redirect_from:
