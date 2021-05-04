@@ -57,6 +57,7 @@ public:
         _dat.resize(sz);
         build(_dat);
     }
+    // [l,r)
     T query(int l,int r)const{
         assert(0 <= l && l < r && r <= _n);
         r--;
