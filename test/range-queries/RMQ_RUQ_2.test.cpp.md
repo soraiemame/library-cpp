@@ -102,18 +102,21 @@ data:
     \ * f,x.size};}\n};\n\nnamespace aliases{\n    template<class T>\n    using RMQ_RUQ\
     \ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
     \    template<class T>\n    using RMQ_RAQ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RUQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RAQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
     \    template<class T>\n    using RSQ_RUQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_update<T>,tools::none<T>,tools::lim_max<T>>;\n    template<class\
     \ T>\n    using RSQ_RAQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_add,tools::sum<T>,tools::zero<T>>;\n};\n\nusing aliases::RMQ_RAQ;\n\
-    using aliases::RMQ_RUQ;\nusing aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n\n\
-    #line 4 \"test/range-queries/RMQ_RUQ_2.test.cpp\"\n\n#line 6 \"test/range-queries/RMQ_RUQ_2.test.cpp\"\
-    \n\nint main(){\n    int N,Q;\n    std::cin >> N >> Q;\n    RMQ_RUQ<int> ST(N);\n\
-    \    for(int i = 0;i < Q;i++){\n        int t;\n        std::cin >> t;\n     \
-    \   if(t == 0){\n            int a,b,c;\n            std::cin >> a >> b >> c;\n\
-    \            ST.update(a,b + 1,c);\n        }\n        else{\n            int\
-    \ a,b;\n            std::cin >> a >> b;\n            std::cout << ST.query(a,b\
-    \ + 1) << \"\\n\";\n        }\n    }\n}\n"
+    using aliases::RMQ_RUQ;\nusing aliases::RMaxQ_RAQ;\nusing aliases::RMaxQ_RUQ;\n\
+    using aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n\n#line 4 \"test/range-queries/RMQ_RUQ_2.test.cpp\"\
+    \n\n#line 6 \"test/range-queries/RMQ_RUQ_2.test.cpp\"\n\nint main(){\n    int\
+    \ N,Q;\n    std::cin >> N >> Q;\n    RMQ_RUQ<int> ST(N);\n    for(int i = 0;i\
+    \ < Q;i++){\n        int t;\n        std::cin >> t;\n        if(t == 0){\n   \
+    \         int a,b,c;\n            std::cin >> a >> b >> c;\n            ST.update(a,b\
+    \ + 1,c);\n        }\n        else{\n            int a,b;\n            std::cin\
+    \ >> a >> b;\n            std::cout << ST.query(a,b + 1) << \"\\n\";\n       \
+    \ }\n    }\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F\"\
     \n\n#include \"../../data-structure/lazysegtree_utils.hpp\"\n\n#include <iostream>\n\
     \nint main(){\n    int N,Q;\n    std::cin >> N >> Q;\n    RMQ_RUQ<int> ST(N);\n\
@@ -128,7 +131,7 @@ data:
   isVerificationFile: true
   path: test/range-queries/RMQ_RUQ_2.test.cpp
   requiredBy: []
-  timestamp: '2021-03-18 11:13:34+09:00'
+  timestamp: '2021-05-05 21:51:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/range-queries/RMQ_RUQ_2.test.cpp

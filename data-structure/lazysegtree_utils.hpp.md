@@ -106,11 +106,14 @@ data:
     \ * f,x.size};}\n};\n\nnamespace aliases{\n    template<class T>\n    using RMQ_RUQ\
     \ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
     \    template<class T>\n    using RMQ_RAQ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RUQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RAQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
     \    template<class T>\n    using RSQ_RUQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_update<T>,tools::none<T>,tools::lim_max<T>>;\n    template<class\
     \ T>\n    using RSQ_RAQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_add,tools::sum<T>,tools::zero<T>>;\n};\n\nusing aliases::RMQ_RAQ;\n\
-    using aliases::RMQ_RUQ;\nusing aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n\n"
+    using aliases::RMQ_RUQ;\nusing aliases::RMaxQ_RAQ;\nusing aliases::RMaxQ_RUQ;\n\
+    using aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n\n"
   code: "#ifndef SORAIE_LAZYSEGTREE_UTILS\n#define SORAIE_LAZYSEGTREE_UTILS\n\n#include\
     \ <algorithm>\n#include <iostream>\n\n#include \"lazysegtree_abstract.hpp\"\n\n\
     namespace tools{\n    template<class T>\n    T lim_max(){return std::numeric_limits<T>::max();}\n\
@@ -130,22 +133,24 @@ data:
     \ * f,x.size};}\n};\n\nnamespace aliases{\n    template<class T>\n    using RMQ_RUQ\
     \ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
     \    template<class T>\n    using RMQ_RAQ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RUQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;\n\
+    \    template<class T>\n    using RMaxQ_RAQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;\n\
     \    template<class T>\n    using RSQ_RUQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_update<T>,tools::none<T>,tools::lim_max<T>>;\n    template<class\
     \ T>\n    using RSQ_RAQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,\n\
     \    T,tools::range_add_add,tools::sum<T>,tools::zero<T>>;\n};\n\nusing aliases::RMQ_RAQ;\n\
-    using aliases::RMQ_RUQ;\nusing aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n\
-    #endif /*SORAIE_LAZYSEGTREE_UTILS*/"
+    using aliases::RMQ_RUQ;\nusing aliases::RMaxQ_RAQ;\nusing aliases::RMaxQ_RUQ;\n\
+    using aliases::RSQ_RAQ;\nusing aliases::RSQ_RUQ;\n\n#endif /*SORAIE_LAZYSEGTREE_UTILS*/"
   dependsOn:
   - data-structure/lazysegtree_abstract.hpp
   isVerificationFile: false
   path: data-structure/lazysegtree_utils.hpp
   requiredBy: []
-  timestamp: '2021-03-18 11:13:34+09:00'
+  timestamp: '2021-05-05 21:51:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/range-queries/RSQ_RAQ_2.test.cpp
   - test/range-queries/RMQ_RUQ_2.test.cpp
+  - test/range-queries/RSQ_RAQ_2.test.cpp
   - test/range-queries/RMQ_RAQ_2.test.cpp
   - test/range-queries/RSQ_RUQ_2.test.cpp
 documentation_of: data-structure/lazysegtree_utils.hpp

@@ -563,25 +563,25 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/polygon_point_contain.test.cpp
-  - test/geometory/cross_point.test.cpp
-  - test/geometory/common_tangent.test.cpp
-  - test/geometory/reflect.test.cpp
-  - test/geometory/closest_pair.test.cpp
-  - test/geometory/distance.test.cpp
-  - test/geometory/projection.test.cpp
-  - test/geometory/intersect_circle.test.cpp
   - test/geometory/intersect.test.cpp
-  - test/geometory/isconvex.test.cpp
-  - test/geometory/CCW.test.cpp
-  - test/geometory/farthest_pair.test.cpp
-  - test/geometory/outcircle.test.cpp
-  - test/geometory/area.test.cpp
+  - test/geometory/distance.test.cpp
+  - test/geometory/closest_pair.test.cpp
   - test/geometory/crosspoint_circle.test.cpp
-  - test/geometory/crosspoint_circle_line.test.cpp
-  - test/geometory/tangent_circle.test.cpp
   - test/geometory/incircle.test.cpp
-  - test/geometory/convexhull.test.cpp
+  - test/geometory/farthest_pair.test.cpp
+  - test/geometory/isconvex.test.cpp
+  - test/geometory/intersect_circle.test.cpp
+  - test/geometory/crosspoint_circle_line.test.cpp
+  - test/geometory/common_tangent.test.cpp
   - test/geometory/paralell_orthogonal.test.cpp
+  - test/geometory/cross_point.test.cpp
+  - test/geometory/projection.test.cpp
+  - test/geometory/tangent_circle.test.cpp
+  - test/geometory/area.test.cpp
+  - test/geometory/convexhull.test.cpp
+  - test/geometory/CCW.test.cpp
+  - test/geometory/reflect.test.cpp
+  - test/geometory/outcircle.test.cpp
 documentation_of: geometory/main.hpp
 layout: document
 redirect_from:

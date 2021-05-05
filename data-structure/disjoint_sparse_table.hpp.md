@@ -29,13 +29,13 @@ data:
     \   w >>= 1;\n        }\n    }\n\npublic:\n    DisjointSparseTable(const std::vector<T>&\
     \ dat){\n        _n = dat.size();\n        sz = 1;\n        log = 0;\n       \
     \ while(sz < _n)sz <<= 1,log++;\n        table = std::vector<std::vector<T>>(log,std::vector<T>(sz));\n\
-    \        std::vector<T> _dat = dat;\n        _dat.resize(sz);\n        build(_dat);\n\
-    \    }\n    // [l,r)\n    T query(int l,int r)const{\n        assert(0 <= l &&\
-    \ l < r && r <= _n);\n        r--;\n        if(l == r)return table.back()[l];\n\
-    \        int clz = msb(l ^ r);\n        int lev = log - clz - 1;\n        T res\
-    \ = op(table[lev][l],table[lev][r]);\n        return res;\n    }\n    inline T\
-    \ operator[](int k)const{\n        assert(k < _n);\n        return table.back()[k];\n\
-    \    }\n};\n\n\n"
+    \        std::vector<T> _dat = dat;\n        _dat.resize(sz);\n        if(log)build(_dat);\n\
+    \        else table = std::vector<std::vector<T>>(1,dat);\n    }\n    // [l,r)\n\
+    \    T query(int l,int r)const{\n        assert(0 <= l && l < r && r <= _n);\n\
+    \        r--;\n        if(l == r)return table.back()[l];\n        int clz = msb(l\
+    \ ^ r);\n        int lev = log - clz - 1;\n        T res = op(table[lev][l],table[lev][r]);\n\
+    \        return res;\n    }\n    inline T operator[](int k)const{\n        assert(k\
+    \ < _n);\n        return table.back()[k];\n    }\n};\n\n\n"
   code: "#ifndef SORAIE_DISJOINT_SPARSE_TABLE\n#define SORAIE_DISJOINT_SPARSE_TABLE\n\
     \n#include <vector>\n#include <cassert>\n\ntemplate<class T,T (*op)(T,T)>\nstruct\
     \ DisjointSparseTable{\nprivate:\n    int _n,log,sz;\n    std::vector<std::vector<T>>\
@@ -54,18 +54,18 @@ data:
     \            w >>= 1;\n        }\n    }\n\npublic:\n    DisjointSparseTable(const\
     \ std::vector<T>& dat){\n        _n = dat.size();\n        sz = 1;\n        log\
     \ = 0;\n        while(sz < _n)sz <<= 1,log++;\n        table = std::vector<std::vector<T>>(log,std::vector<T>(sz));\n\
-    \        std::vector<T> _dat = dat;\n        _dat.resize(sz);\n        build(_dat);\n\
-    \    }\n    // [l,r)\n    T query(int l,int r)const{\n        assert(0 <= l &&\
-    \ l < r && r <= _n);\n        r--;\n        if(l == r)return table.back()[l];\n\
-    \        int clz = msb(l ^ r);\n        int lev = log - clz - 1;\n        T res\
-    \ = op(table[lev][l],table[lev][r]);\n        return res;\n    }\n    inline T\
-    \ operator[](int k)const{\n        assert(k < _n);\n        return table.back()[k];\n\
-    \    }\n};\n\n#endif /*SORAIE_DISJOINT_SPARSE_TABLE*/"
+    \        std::vector<T> _dat = dat;\n        _dat.resize(sz);\n        if(log)build(_dat);\n\
+    \        else table = std::vector<std::vector<T>>(1,dat);\n    }\n    // [l,r)\n\
+    \    T query(int l,int r)const{\n        assert(0 <= l && l < r && r <= _n);\n\
+    \        r--;\n        if(l == r)return table.back()[l];\n        int clz = msb(l\
+    \ ^ r);\n        int lev = log - clz - 1;\n        T res = op(table[lev][l],table[lev][r]);\n\
+    \        return res;\n    }\n    inline T operator[](int k)const{\n        assert(k\
+    \ < _n);\n        return table.back()[k];\n    }\n};\n\n#endif /*SORAIE_DISJOINT_SPARSE_TABLE*/"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/disjoint_sparse_table.hpp
   requiredBy: []
-  timestamp: '2021-05-04 18:29:20+09:00'
+  timestamp: '2021-05-05 21:51:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/disjoint_sparse_table.test.cpp

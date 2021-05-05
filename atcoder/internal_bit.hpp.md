@@ -52,8 +52,8 @@ data:
   path: atcoder/internal_bit.hpp
   requiredBy:
   - atcoder/lazysegtree.hpp
-  - atcoder/convolution.hpp
   - atcoder/segtree.hpp
+  - atcoder/convolution.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
