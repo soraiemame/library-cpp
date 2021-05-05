@@ -55,7 +55,8 @@ public:
         table = std::vector<std::vector<T>>(log,std::vector<T>(sz));
         std::vector<T> _dat = dat;
         _dat.resize(sz);
-        build(_dat);
+        if(log)build(_dat);
+        else table = std::vector<std::vector<T>>(1,dat);
     }
     // [l,r)
     T query(int l,int r)const{

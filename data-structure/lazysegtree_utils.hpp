@@ -45,6 +45,10 @@ namespace aliases{
     template<class T>
     using RMQ_RAQ = lazy_segtree_base<T,tools::_min<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;
     template<class T>
+    using RMaxQ_RUQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::none<T>,tools::none<T>,tools::lim_max<T>>;
+    template<class T>
+    using RMaxQ_RAQ = lazy_segtree_base<T,tools::_max<T>,tools::lim_max<T>,T,tools::sum<T>,tools::sum<T>,tools::zero<T>>;
+    template<class T>
     using RSQ_RUQ = lazy_segtree_base<tools::range_add<T>,tools::range_add_sum<T>,tools::range_add_e<T>,
     T,tools::range_add_update<T>,tools::none<T>,tools::lim_max<T>>;
     template<class T>
@@ -54,6 +58,8 @@ namespace aliases{
 
 using aliases::RMQ_RAQ;
 using aliases::RMQ_RUQ;
+using aliases::RMaxQ_RAQ;
+using aliases::RMaxQ_RUQ;
 using aliases::RSQ_RAQ;
 using aliases::RSQ_RUQ;
 
