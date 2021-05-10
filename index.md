@@ -113,9 +113,6 @@ data:
       title: geometory/main.hpp
   - name: graph
     pages:
-    - icon: ':warning:'
-      path: graph/BFS.hpp
-      title: graph/BFS.hpp
     - icon: ':heavy_check_mark:'
       path: graph/SCC.hpp
       title: graph/SCC.hpp
@@ -125,6 +122,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/spfa.hpp
       title: graph/spfa.hpp
+    - icon: ':x:'
+      path: graph/topological_sort.hpp
+      title: graph/topological_sort.hpp
     - icon: ':heavy_check_mark:'
       path: graph/warshall_floyd.hpp
       title: graph/warshall_floyd.hpp
@@ -207,8 +207,14 @@ data:
       path: utils/graph_alias.hpp
       title: utils/graph_alias.hpp
     - icon: ':warning:'
+      path: utils/randbase.hpp
+      title: utils/randbase.hpp
+    - icon: ':warning:'
       path: utils/random.hpp
       title: utils/random.hpp
+    - icon: ':warning:'
+      path: utils/random_checker.hpp
+      title: utils/random_checker.hpp
     - icon: ':warning:'
       path: utils/time.hpp
       title: utils/time.hpp
@@ -260,6 +266,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/sqrt_decomposition.test.cpp
       title: test/sqrt_decomposition.test.cpp
+    - icon: ':x:'
+      path: test/topological_sort.test.cpp
+      title: test/topological_sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/unionfind.test.cpp
       title: test/unionfind.test.cpp

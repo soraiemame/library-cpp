@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/minimum_spanning_tree.hpp
     title: algorithm/minimum_spanning_tree.hpp
+  - icon: ':warning:'
+    path: utils/random.hpp
+    title: utils/random.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/minimum_spanning_tree.test.cpp
@@ -46,6 +49,7 @@ data:
   path: data-structure/unionfind.hpp
   requiredBy:
   - algorithm/minimum_spanning_tree.hpp
+  - utils/random.hpp
   timestamp: '2021-02-16 19:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
