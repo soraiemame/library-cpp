@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/NTT_998244353.test.cpp
     title: test/NTT_998244353.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/matrix.test.cpp
+    title: test/matrix.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -104,6 +107,7 @@ data:
   verifiedWith:
   - test/NTT_998244353.test.cpp
   - test/NTT_1000000007.test.cpp
+  - test/matrix.test.cpp
 documentation_of: math/modint.hpp
 layout: document
 redirect_from:

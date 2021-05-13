@@ -167,6 +167,9 @@ data:
       path: math/math.hpp
       title: math/math.hpp
     - icon: ':heavy_check_mark:'
+      path: math/matrix.hpp
+      title: math/matrix.hpp
+    - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: math/modint.hpp
     - icon: ':warning:'
@@ -245,6 +248,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/lichaotree.test.cpp
       title: test/lichaotree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/matrix.test.cpp
+      title: test/matrix.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/minimum_spanning_tree.test.cpp
       title: test/minimum_spanning_tree.test.cpp
