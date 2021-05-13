@@ -122,7 +122,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/spfa.hpp
       title: graph/spfa.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: graph/topological_sort.hpp
       title: graph/topological_sort.hpp
     - icon: ':heavy_check_mark:'
@@ -191,6 +191,9 @@ data:
     - icon: ':warning:'
       path: test/FFT.cpp
       title: test/FFT.cpp
+    - icon: ':warning:'
+      path: test/topological_sort.cpp
+      title: test/topological_sort.cpp
     - icon: ':warning:'
       path: test/unionfind_abstract.cpp
       title: test/unionfind_abstract.cpp
@@ -272,9 +275,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/sqrt_decomposition.test.cpp
       title: test/sqrt_decomposition.test.cpp
-    - icon: ':x:'
-      path: test/topological_sort.test.cpp
-      title: test/topological_sort.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/unionfind.test.cpp
       title: test/unionfind.test.cpp

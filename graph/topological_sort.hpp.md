@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/topological_sort.test.cpp
-    title: test/topological_sort.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/topological_sort.cpp
+    title: test/topological_sort.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/topological_sort.hpp\"\n\n\n\n#include <vector>\n\
@@ -33,11 +33,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/topological_sort.hpp
-  requiredBy: []
+  requiredBy:
+  - test/topological_sort.cpp
   timestamp: '2021-05-10 14:03:35+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/topological_sort.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/topological_sort.hpp
 layout: document
 redirect_from:
