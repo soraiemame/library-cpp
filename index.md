@@ -108,6 +108,9 @@ data:
       title: data-structure/unionfind_abstract.hpp
   - name: geometory
     pages:
+    - icon: ':warning:'
+      path: geometory/_complex.hpp
+      title: geometory/_complex.hpp
     - icon: ':heavy_check_mark:'
       path: geometory/main.hpp
       title: geometory/main.hpp
