@@ -147,12 +147,12 @@ data:
   timestamp: '2021-02-11 18:28:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/range-queries/RMQ_RAQ_1.test.cpp
-  - test/range-queries/RAQ_1.test.cpp
-  - test/range-queries/RUQ_1.test.cpp
   - test/range-queries/RSQ_RAQ_1.test.cpp
-  - test/range-queries/RSQ_RUQ_1.test.cpp
+  - test/range-queries/RUQ_1.test.cpp
+  - test/range-queries/RMQ_RAQ_1.test.cpp
   - test/range-queries/RMQ_RUQ_1.test.cpp
+  - test/range-queries/RAQ_1.test.cpp
+  - test/range-queries/RSQ_RUQ_1.test.cpp
 documentation_of: data-structure/lazysegtree.hpp
 layout: document
 redirect_from:

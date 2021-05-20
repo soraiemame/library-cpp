@@ -15,10 +15,10 @@ data:
     \ = _fac[i - 1] * i;\n            _inv[i] = T(i).inv();\n            _finv[i]\
     \ = _finv[i - 1] * _inv[i];\n        }\n    }\n    void expand(int n){\n     \
     \   for(int i = _fac.size();i < n + 10;i++){\n            _fac.push_back(_fac[i\
-    \ - 1] * i);\n            _inv[i] = T(i).inv();\n            _finv[i] = _finv[i\
-    \ - 1] * _inv[i];\n        }\n    }\n    T fac(int n){\n        expand(n);\n \
-    \       return _fac[n];\n    }\n    T inv(int n){\n        expand(n);\n      \
-    \  return _inv[n];\n    }\n    T finv(int n){\n        expand(n);\n        return\
+    \ - 1] * i);\n            _inv.push_back(T(i).inv());\n            _finv[i].push_back(_finv[i\
+    \ - 1] * _inv[i]);\n        }\n    }\n    T fac(int n){\n        expand(n);\n\
+    \        return _fac[n];\n    }\n    T inv(int n){\n        expand(n);\n     \
+    \   return _inv[n];\n    }\n    T finv(int n){\n        expand(n);\n        return\
     \ _finv[n];\n    }\n\n    T C(int n,int k){\n        if(n < k || k < 0 || n <\
     \ 0)return T(0);\n        return fac(n) * finv(n - k) * finv(k);\n    }\n    T\
     \ P(int n,int k){\n        if(n < k || k < 0 || n < 0)return T(0);\n        debug(n,fac(n),n-k,finv(n\
@@ -32,10 +32,10 @@ data:
     \    _fac[i] = _fac[i - 1] * i;\n            _inv[i] = T(i).inv();\n         \
     \   _finv[i] = _finv[i - 1] * _inv[i];\n        }\n    }\n    void expand(int\
     \ n){\n        for(int i = _fac.size();i < n + 10;i++){\n            _fac.push_back(_fac[i\
-    \ - 1] * i);\n            _inv[i] = T(i).inv();\n            _finv[i] = _finv[i\
-    \ - 1] * _inv[i];\n        }\n    }\n    T fac(int n){\n        expand(n);\n \
-    \       return _fac[n];\n    }\n    T inv(int n){\n        expand(n);\n      \
-    \  return _inv[n];\n    }\n    T finv(int n){\n        expand(n);\n        return\
+    \ - 1] * i);\n            _inv.push_back(T(i).inv());\n            _finv[i].push_back(_finv[i\
+    \ - 1] * _inv[i]);\n        }\n    }\n    T fac(int n){\n        expand(n);\n\
+    \        return _fac[n];\n    }\n    T inv(int n){\n        expand(n);\n     \
+    \   return _inv[n];\n    }\n    T finv(int n){\n        expand(n);\n        return\
     \ _finv[n];\n    }\n\n    T C(int n,int k){\n        if(n < k || k < 0 || n <\
     \ 0)return T(0);\n        return fac(n) * finv(n - k) * finv(k);\n    }\n    T\
     \ P(int n,int k){\n        if(n < k || k < 0 || n < 0)return T(0);\n        debug(n,fac(n),n-k,finv(n\
@@ -47,7 +47,7 @@ data:
   isVerificationFile: false
   path: math/binomial.hpp
   requiredBy: []
-  timestamp: '2021-05-04 18:25:13+09:00'
+  timestamp: '2021-05-20 17:51:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/binomial.hpp

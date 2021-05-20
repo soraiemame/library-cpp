@@ -53,8 +53,8 @@ data:
   timestamp: '2021-02-16 19:02:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/minimum_spanning_tree.test.cpp
   - test/unionfind.test.cpp
+  - test/minimum_spanning_tree.test.cpp
 documentation_of: data-structure/unionfind.hpp
 layout: document
 redirect_from:

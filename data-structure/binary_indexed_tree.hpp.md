@@ -51,8 +51,8 @@ data:
   timestamp: '2021-02-09 19:39:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/inversion_number.test.cpp
   - test/binary_indexed_tree.test.cpp
+  - test/inversion_number.test.cpp
 documentation_of: data-structure/binary_indexed_tree.hpp
 layout: document
 redirect_from:
