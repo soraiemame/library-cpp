@@ -577,6 +577,7 @@ struct point{
     point& operator-=(const DD& sca)noexcept{x -= sca;return *this;}
     point& operator*=(const DD& sca)noexcept{x *= sca;y *= sca;return *this;}
     point& operator/=(const DD& sca)noexcept{x /= sca;y /= sca;return *this;}
+    bool operator==(const point& p)const noexcept{return x == p.x && y == p.y;}
     DD abs()const noexcept{return sqrt(x * x + y * y);}
     DD norm()const noexcept{return x * x + y * y;}
     static point polar(DD rho,DD theta){return point(rho * cos(theta),rho * sin(theta));}
