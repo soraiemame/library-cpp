@@ -825,7 +825,7 @@ std::vector<line> tangetlines(circle c,circle d,bool same_point = 0){
             res.push_back(line(c.C + (uu - vv) * c.r,d.C - (uu - vv) * d.r * DD(s)));
         }
     }
-    if(swaped)for(auto &a : res)swap(a.S,a.T);
+    if(swaped)for(auto &a : res)std::swap(a.S,a.T);
     return res;
 }
 
@@ -961,7 +961,7 @@ int inpolygon(point p,polygon& po){
         point b = po[(i + 1) % n];
         if(isecPS(p,lineseg(a,b)))return 2;
         if(!isecLS(line(p,p + DD(1.0)),lineseg(a,b)))continue;
-        if(a.y > b.y)swap(a,b);
+        if(a.y > b.y)std::swap(a,b);
         try{
             point q = crosspointLL(line(p,point(p.x + DD(1.0),p.y)),line(a,b));
             if(sign(q.x - p.x) == 1 && !(sign(q.x - b.x) == 0 && sign(q.y - b.y) == 0))in = !in;
