@@ -108,7 +108,7 @@ data:
       title: data-structure/unionfind_abstract.hpp
   - name: geometory
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: geometory/main.hpp
       title: geometory/main.hpp
   - name: graph
@@ -300,7 +300,7 @@ data:
       title: test/bigint/subtraction.test.cpp
   - name: test/geometory
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/CCW.test.cpp
       title: test/geometory/CCW.test.cpp
     - icon: ':heavy_check_mark:'

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: geometory/main.hpp
     title: geometory/main.hpp
   _extendedRequiredBy: []
@@ -297,59 +297,60 @@ data:
     \ sca;return *this;}\n    point& operator-=(const DD& sca)noexcept{x -= sca;return\
     \ *this;}\n    point& operator*=(const DD& sca)noexcept{x *= sca;y *= sca;return\
     \ *this;}\n    point& operator/=(const DD& sca)noexcept{x /= sca;y /= sca;return\
-    \ *this;}\n    DD abs()const noexcept{return sqrt(x * x + y * y);}\n    DD norm()const\
-    \ noexcept{return x * x + y * y;}\n    static point polar(DD rho,DD theta){return\
-    \ point(rho * cos(theta),rho * sin(theta));}\n};\n\n// using point = std::complex<DD>;\n\
-    using VP = std::vector<point>;\nconst DD eps = 1e-9;\nstruct lineseg{point S,T;lineseg(point\
-    \ s = 0,point t = 0):S(s),T(t){}};\nstruct line{point S,T;line(point s = 0,point\
-    \ t = 0):S(s),T(t){}};\nstruct circle{point C;DD r;circle(point C_ = 0,DD r_ =\
-    \ 0):C(C_),r(r_){}};\nstruct polygon{\n    int n;\n    VP ps;\n    polygon(int\
-    \ n_ = 0):n(n_),ps(n_){}\n    polygon(VP ps_):n(ps_.size()),ps(ps_){}\n    point\
-    \ &operator[](int n){return ps[n];}\n};\nint sign(DD a){\n    if(a < -eps)return\
-    \ -1;\n    else if(a > eps)return 1;\n    else return 0;\n}\npoint inputP(){\n\
-    \    DD X,Y;\n    std::cin >> X >> Y;\n    return point(X,Y);\n}\nbool eq(DD a,DD\
-    \ b){return abs(a - b) < eps;}\nstd::ostream &operator<<(std::ostream& os,point\
-    \ p){return os << \"(\" << p.x << \",\" << p.y << \")\";}\nstd::ostream &operator<<(std::ostream&\
-    \ os,line l){return os << l.S << \"->\" << l.T;}\nstd::ostream &operator<<(std::ostream&\
-    \ os,lineseg l){return os << l.S << \"->\" << l.T;}\nDD det(point a,point b){return\
-    \ a.x * b.y - a.y * b.x;}\nDD dot(point a,point b){return a.x * b.x + a.y * b.y;}\n\
-    \n//o\u3092\u4E2D\u5FC3\u306Bp\u3092theta\u53CD\u6642\u8A08\u56DE\u308A\u306B\u56DE\
-    \u8EE2\npoint rot(point o,point p,DD theta){\n    point pp = p - o;\n    point\
-    \ res(pp.x * cosl(theta) - pp.y * sinl(theta),pp.x * sinl(theta) + pp.y * cosl(theta));\n\
-    \    return res + o;\n}\n\n//a->b->c\u306E\u9032\u307F\u65B9\nint dir(point a,point\
-    \ b,point c){\n    b -= a;c -= a;\n    if(sign(det(b,c)) == 1)return 1;//counter\
-    \ clockwise\n    else if(sign(det(b,c)) == -1)return -1;//clockwise\n    else{\n\
-    \        if(sign(dot(b,c)) == -1)return 2;//b a c or c a b\n        else if(b.norm()\
-    \ < c.norm())return -2;//a b c or c b a or a == b\n        else return 0;//a c\
-    \ b or b c a or a == c or b == c\n    }\n}\n\n//\u76F4\u7DDA\u3068\u70B9\nbool\
-    \ isecLP(line l,point a){return abs(dir(l.S,a,l.T)) != 1;}\n//2\u3064\u306E\u76F4\
-    \u7DDA\u306E\u95A2\u4FC2\nint line_place(line l,line m){\n    if(isecLP(l,m.S)\
-    \ && isecLP(l,m.T))return 1;//\u4E00\u81F4\n    else if(isecLP(line(l.T - l.S,m.T\
-    \ - m.S),0))return 2;//\u5E73\u884C\n    else if(sign(dot(l.T - l.S,m.T - m.S))\
-    \ == 0)return 3;//\u76F4\u4EA4\n    else return 0;\n}\n//\u76F4\u7DDA\u3068\u76F4\
-    \u7DDA\nbool isecLL(line l,line m){\n    return line_place(l,m) != 2 && line_place(l,m)\
-    \ != 1;//!(\u5E73\u884C) && !\u4E00\u81F4\n}\n//\u76F4\u7DDA\u3068\u7DDA\u5206\
-    \nbool isecLS(line l,lineseg s){\n    s.S -= l.S;s.T -= l.S;l.T -= l.S;l.S -=\
-    \ l.S;\n    return sign(det(l.T,s.S) * det(l.T,s.T)) != 1;//l.T\u306B\u5BFE\u3059\
-    \u308B\u4F4D\u7F6E\u95A2\u4FC2\u3092\u8ABF\u3079\u305F\n}\n//\u7DDA\u5206\u3068\
-    \u7DDA\u5206\nbool isecSS(lineseg s,lineseg t){\n    return (dir(s.S,s.T,t.S)\
-    \ * dir(s.S,s.T,t.T) <= 0)\n    && (dir(t.S,t.T,s.S) * dir(t.S,t.T,s.T) <= 0);//\u305D\
-    \u308C\u305E\u308C\u306E\u7DDA\u5206\u3068\u70B9\u3092\u898B\u3066\u3044\u304D\
-    \u3001\u4F4D\u7F6E\u95A2\u4FC2\u304C\u7570\u306A\u308B\u3053(\u4EA4\u308F\u308B\
-    )\u3092\u78BA\u8A8D\n}\n//\u7DDA\u5206\u3068\u70B9\nbool isecSP(lineseg s,point\
-    \ a){\n    return dir(s.S,s.T,a) == 0;\n}\nbool isecPL(point p,line l){return\
-    \ isecLP(l,p);}\nbool isecSL(lineseg s,line l){return isecLS(l,s);}\nbool isecPS(point\
-    \ p,lineseg s){return isecSP(s,p);}\n\n//p\u304B\u3089l\u306B\u5782\u7DDA\u3092\
-    \u304A\u308D\u3057\u305F\u6642\u306E\u4EA4\u70B9\u306E\u5EA7\u6A19\npoint project(line\
-    \ l,point p){\n    point a = l.T - l.S,b = p - l.S;\n    return l.S + a * (dot(a,b)\
-    \ / a.norm());//l.S ~ l.T\u3068l.S ~ p\u306E\u8DDD\u96E2\u306E\u6BD4\u3092\u639B\
-    \u3051\u308B\n}\n//l\u3092\u8EF8\u306B\u3057\u3066p\u3068\u7DDA\u5BFE\u79F0\u306A\
-    \u70B9\npoint reflect(line l,point p){return project(l,p) * DD(2) - p;}\n\n//\u70B9\
-    \u3068\u70B9\nDD distPP(point p,point q){return (p - q).abs();}\n//\u76F4\u7DDA\
-    \u3068\u70B9\nDD distLP(line l,point p){return distPP(project(l,p),p);}\n//\u76F4\
-    \u7DDA\u3068\u76F4\u7DDA\nDD distLL(line l,line m){\n    if(line_place(l,m) !=\
-    \ 2)return 0;\n    else return distLP(l,m.S);\n}\n//\u76F4\u7DDA\u3068\u7DDA\u5206\
-    \nDD distLS(line l,lineseg s){\n    if(isecLS(l,s))return 0;\n    else return\
+    \ *this;}\n    bool operator==(const point& p)const noexcept{return x == p.x &&\
+    \ y == p.y;}\n    DD abs()const noexcept{return sqrt(x * x + y * y);}\n    DD\
+    \ norm()const noexcept{return x * x + y * y;}\n    static point polar(DD rho,DD\
+    \ theta){return point(rho * cos(theta),rho * sin(theta));}\n};\n\n// using point\
+    \ = std::complex<DD>;\nusing VP = std::vector<point>;\nconst DD eps = 1e-9;\n\
+    struct lineseg{point S,T;lineseg(point s = 0,point t = 0):S(s),T(t){}};\nstruct\
+    \ line{point S,T;line(point s = 0,point t = 0):S(s),T(t){}};\nstruct circle{point\
+    \ C;DD r;circle(point C_ = 0,DD r_ = 0):C(C_),r(r_){}};\nstruct polygon{\n   \
+    \ int n;\n    VP ps;\n    polygon(int n_ = 0):n(n_),ps(n_){}\n    polygon(VP ps_):n(ps_.size()),ps(ps_){}\n\
+    \    point &operator[](int n){return ps[n];}\n};\nint sign(DD a){\n    if(a <\
+    \ -eps)return -1;\n    else if(a > eps)return 1;\n    else return 0;\n}\npoint\
+    \ inputP(){\n    DD X,Y;\n    std::cin >> X >> Y;\n    return point(X,Y);\n}\n\
+    bool eq(DD a,DD b){return abs(a - b) < eps;}\nstd::ostream &operator<<(std::ostream&\
+    \ os,point p){return os << \"(\" << p.x << \",\" << p.y << \")\";}\nstd::ostream\
+    \ &operator<<(std::ostream& os,line l){return os << l.S << \"->\" << l.T;}\nstd::ostream\
+    \ &operator<<(std::ostream& os,lineseg l){return os << l.S << \"->\" << l.T;}\n\
+    DD det(point a,point b){return a.x * b.y - a.y * b.x;}\nDD dot(point a,point b){return\
+    \ a.x * b.x + a.y * b.y;}\n\n//o\u3092\u4E2D\u5FC3\u306Bp\u3092theta\u53CD\u6642\
+    \u8A08\u56DE\u308A\u306B\u56DE\u8EE2\npoint rot(point o,point p,DD theta){\n \
+    \   point pp = p - o;\n    point res(pp.x * cosl(theta) - pp.y * sinl(theta),pp.x\
+    \ * sinl(theta) + pp.y * cosl(theta));\n    return res + o;\n}\n\n//a->b->c\u306E\
+    \u9032\u307F\u65B9\nint dir(point a,point b,point c){\n    b -= a;c -= a;\n  \
+    \  if(sign(det(b,c)) == 1)return 1;//counter clockwise\n    else if(sign(det(b,c))\
+    \ == -1)return -1;//clockwise\n    else{\n        if(sign(dot(b,c)) == -1)return\
+    \ 2;//b a c or c a b\n        else if(b.norm() < c.norm())return -2;//a b c or\
+    \ c b a or a == b\n        else return 0;//a c b or b c a or a == c or b == c\n\
+    \    }\n}\n\n//\u76F4\u7DDA\u3068\u70B9\nbool isecLP(line l,point a){return abs(dir(l.S,a,l.T))\
+    \ != 1;}\n//2\u3064\u306E\u76F4\u7DDA\u306E\u95A2\u4FC2\nint line_place(line l,line\
+    \ m){\n    if(isecLP(l,m.S) && isecLP(l,m.T))return 1;//\u4E00\u81F4\n    else\
+    \ if(isecLP(line(l.T - l.S,m.T - m.S),0))return 2;//\u5E73\u884C\n    else if(sign(dot(l.T\
+    \ - l.S,m.T - m.S)) == 0)return 3;//\u76F4\u4EA4\n    else return 0;\n}\n//\u76F4\
+    \u7DDA\u3068\u76F4\u7DDA\nbool isecLL(line l,line m){\n    return line_place(l,m)\
+    \ != 2 && line_place(l,m) != 1;//!(\u5E73\u884C) && !\u4E00\u81F4\n}\n//\u76F4\
+    \u7DDA\u3068\u7DDA\u5206\nbool isecLS(line l,lineseg s){\n    s.S -= l.S;s.T -=\
+    \ l.S;l.T -= l.S;l.S -= l.S;\n    return sign(det(l.T,s.S) * det(l.T,s.T)) !=\
+    \ 1;//l.T\u306B\u5BFE\u3059\u308B\u4F4D\u7F6E\u95A2\u4FC2\u3092\u8ABF\u3079\u305F\
+    \n}\n//\u7DDA\u5206\u3068\u7DDA\u5206\nbool isecSS(lineseg s,lineseg t){\n   \
+    \ return (dir(s.S,s.T,t.S) * dir(s.S,s.T,t.T) <= 0)\n    && (dir(t.S,t.T,s.S)\
+    \ * dir(t.S,t.T,s.T) <= 0);//\u305D\u308C\u305E\u308C\u306E\u7DDA\u5206\u3068\u70B9\
+    \u3092\u898B\u3066\u3044\u304D\u3001\u4F4D\u7F6E\u95A2\u4FC2\u304C\u7570\u306A\
+    \u308B\u3053(\u4EA4\u308F\u308B)\u3092\u78BA\u8A8D\n}\n//\u7DDA\u5206\u3068\u70B9\
+    \nbool isecSP(lineseg s,point a){\n    return dir(s.S,s.T,a) == 0;\n}\nbool isecPL(point\
+    \ p,line l){return isecLP(l,p);}\nbool isecSL(lineseg s,line l){return isecLS(l,s);}\n\
+    bool isecPS(point p,lineseg s){return isecSP(s,p);}\n\n//p\u304B\u3089l\u306B\u5782\
+    \u7DDA\u3092\u304A\u308D\u3057\u305F\u6642\u306E\u4EA4\u70B9\u306E\u5EA7\u6A19\
+    \npoint project(line l,point p){\n    point a = l.T - l.S,b = p - l.S;\n    return\
+    \ l.S + a * (dot(a,b) / a.norm());//l.S ~ l.T\u3068l.S ~ p\u306E\u8DDD\u96E2\u306E\
+    \u6BD4\u3092\u639B\u3051\u308B\n}\n//l\u3092\u8EF8\u306B\u3057\u3066p\u3068\u7DDA\
+    \u5BFE\u79F0\u306A\u70B9\npoint reflect(line l,point p){return project(l,p) *\
+    \ DD(2) - p;}\n\n//\u70B9\u3068\u70B9\nDD distPP(point p,point q){return (p -\
+    \ q).abs();}\n//\u76F4\u7DDA\u3068\u70B9\nDD distLP(line l,point p){return distPP(project(l,p),p);}\n\
+    //\u76F4\u7DDA\u3068\u76F4\u7DDA\nDD distLL(line l,line m){\n    if(line_place(l,m)\
+    \ != 2)return 0;\n    else return distLP(l,m.S);\n}\n//\u76F4\u7DDA\u3068\u7DDA\
+    \u5206\nDD distLS(line l,lineseg s){\n    if(isecLS(l,s))return 0;\n    else return\
     \ std::min(distLP(l,s.S),distLP(l,s.T));\n}\n//\u7DDA\u5206\u3068\u70B9\nDD distSP(lineseg\
     \ s,point p){\n    point q = project(line(s.S,s.T),p);\n    if(isecSP(s,q))return\
     \ (p - q).abs();\n    else return std::min((s.S - p).abs(),(s.T - p).abs());\n\
@@ -551,7 +552,7 @@ data:
   isVerificationFile: true
   path: test/geometory/isconvex.test.cpp
   requiredBy: []
-  timestamp: '2021-05-20 17:58:53+09:00'
+  timestamp: '2021-05-20 18:08:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/isconvex.test.cpp
