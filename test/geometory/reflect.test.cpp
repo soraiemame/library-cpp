@@ -7,11 +7,11 @@
 
 int main(){
     std::cout << std::fixed << std::setprecision(15);
-    Point p1 = inputP(),p2 = inputP();
+    point p1 = inputP(),p2 = inputP();
     int Q;
     std::cin >> Q;
     for(int i = 0;i < Q;i++){
-        Point q = inputP();
+        point q = inputP();
         auto ans = reflect(line(p1,p2),q);
         std::cout << ans.x << " " << ans.y << "\n";
     }

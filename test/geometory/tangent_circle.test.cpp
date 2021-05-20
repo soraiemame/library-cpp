@@ -7,7 +7,7 @@
 
 int main(){
     std::cout << std::fixed << std::setprecision(15);
-    Point A = inputP();circle B;
+    point A = inputP();circle B;
     B.C = inputP();std::cin >> B.r;
     auto ans = tangentpoints(B,A);
     if(!compare_x(ans[0],ans[1]))std::swap(ans[0],ans[1]);

@@ -9,7 +9,7 @@ int main(){
     for(int i = 0;i < N;i++)vec[i] = inputP();
     auto ans = convexhull(vec);
     int n = ans.size();
-    int from = 0;Point now = ans[0];
+    int from = 0;point now = ans[0];
     for(int i = 0;i < n;i++){
         if(compare_y(ans[i],now)){
             now = ans[i];

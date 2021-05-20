@@ -11,7 +11,7 @@ int main(){
     int Q;
     std::cin >> Q;
     while(Q--){
-        Point p = inputP();
+        point p = inputP();
         int ans = inpolygon(p,pol);
         if(ans == 1)ans = 2;
         else if(ans == 2)ans = 1;

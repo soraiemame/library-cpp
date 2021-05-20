@@ -3,11 +3,11 @@
 #include "../../geometory/main.hpp"
 
 int main(){
-    Point p1 = inputP(),p2 = inputP();
+    point p1 = inputP(),p2 = inputP();
     int Q;
     std::cin >> Q;
     for(int i = 0;i < Q;i++){
-        Point q = inputP();
+        point q = inputP();
         int r = dir(q,p1,p2);
         if(r == 1)std::cout << "COUNTER_CLOCKWISE\n";
         else if(r == -1)std::cout << "CLOCKWISE\n";

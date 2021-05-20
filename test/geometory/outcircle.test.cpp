@@ -7,7 +7,7 @@
 
 int main(){
     std::cout << std::fixed << std::setprecision(15);
-    Point A = inputP(),B = inputP(),C = inputP();
+    point A = inputP(),B = inputP(),C = inputP();
     auto ans = gaisin(A,B,C);
     std::cout << ans.x << " " << ans.y << " " << distPP(ans,A) << "\n";
 }
