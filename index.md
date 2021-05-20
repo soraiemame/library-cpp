@@ -108,7 +108,7 @@ data:
       title: data-structure/unionfind_abstract.hpp
   - name: geometory
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: geometory/main.hpp
       title: geometory/main.hpp
   - name: graph
@@ -303,61 +303,61 @@ data:
     - icon: ':x:'
       path: test/geometory/CCW.test.cpp
       title: test/geometory/CCW.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/area.test.cpp
       title: test/geometory/area.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/closest_pair.test.cpp
       title: test/geometory/closest_pair.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/common_tangent.test.cpp
       title: test/geometory/common_tangent.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/convexhull.test.cpp
       title: test/geometory/convexhull.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/cross_point.test.cpp
       title: test/geometory/cross_point.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/crosspoint_circle.test.cpp
       title: test/geometory/crosspoint_circle.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/crosspoint_circle_line.test.cpp
       title: test/geometory/crosspoint_circle_line.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/distance.test.cpp
       title: test/geometory/distance.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/farthest_pair.test.cpp
       title: test/geometory/farthest_pair.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/incircle.test.cpp
       title: test/geometory/incircle.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/intersect.test.cpp
       title: test/geometory/intersect.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/intersect_circle.test.cpp
       title: test/geometory/intersect_circle.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/isconvex.test.cpp
       title: test/geometory/isconvex.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/outcircle.test.cpp
       title: test/geometory/outcircle.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/paralell_orthogonal.test.cpp
       title: test/geometory/paralell_orthogonal.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/polygon_point_contain.test.cpp
       title: test/geometory/polygon_point_contain.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/projection.test.cpp
       title: test/geometory/projection.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/reflect.test.cpp
       title: test/geometory/reflect.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/tangent_circle.test.cpp
       title: test/geometory/tangent_circle.test.cpp
   - name: test/graph

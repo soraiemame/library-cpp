@@ -9,66 +9,66 @@ data:
   - icon: ':x:'
     path: test/geometory/CCW.test.cpp
     title: test/geometory/CCW.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/area.test.cpp
     title: test/geometory/area.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/closest_pair.test.cpp
     title: test/geometory/closest_pair.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/common_tangent.test.cpp
     title: test/geometory/common_tangent.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/convexhull.test.cpp
     title: test/geometory/convexhull.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/cross_point.test.cpp
     title: test/geometory/cross_point.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/crosspoint_circle.test.cpp
     title: test/geometory/crosspoint_circle.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/crosspoint_circle_line.test.cpp
     title: test/geometory/crosspoint_circle_line.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/distance.test.cpp
     title: test/geometory/distance.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/farthest_pair.test.cpp
     title: test/geometory/farthest_pair.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/incircle.test.cpp
     title: test/geometory/incircle.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/intersect.test.cpp
     title: test/geometory/intersect.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/intersect_circle.test.cpp
     title: test/geometory/intersect_circle.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/isconvex.test.cpp
     title: test/geometory/isconvex.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/outcircle.test.cpp
     title: test/geometory/outcircle.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/paralell_orthogonal.test.cpp
     title: test/geometory/paralell_orthogonal.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/polygon_point_contain.test.cpp
     title: test/geometory/polygon_point_contain.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/projection.test.cpp
     title: test/geometory/projection.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/reflect.test.cpp
     title: test/geometory/reflect.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/tangent_circle.test.cpp
     title: test/geometory/tangent_circle.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"geometory/main.hpp\"\n// #ifndef SORAIE_GEOMETORY_MAIN\n\
@@ -484,9 +484,9 @@ data:
     \ * cos,vv:v * sin\n            res.push_back(line(c.C + (uu + vv) * c.r,d.C -\
     \ (uu + vv) * d.r * DD(s)));\n            res.push_back(line(c.C + (uu - vv) *\
     \ c.r,d.C - (uu - vv) * d.r * DD(s)));\n        }\n    }\n    if(swaped)for(auto\
-    \ &a : res)swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\u534A\
-    \u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point q,DD\
-    \ d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
+    \ &a : res)std::swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\
+    \u534A\u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point\
+    \ q,DD d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
     \    if(sign(di) == 0 || pqM.norm() > d * d)return res;\n    point n = pqM * point(0,1)\
     \ * (sqrtl(pqM.norm() - d * d) / di);//\u30D9\u30AF\u30C8\u30EB\u309290\xB0\u56DE\
     \u8EE2\u3055\u305B\u3066\u6BD4\u3092\u304B\u3051\u308B\n    res.push_back(p +\
@@ -537,7 +537,7 @@ data:
     \  int n = po.n;\n    bool in = 0;\n    for(int i = 0;i < n;i++){\n        point\
     \ a = po[i];\n        point b = po[(i + 1) % n];\n        if(isecPS(p,lineseg(a,b)))return\
     \ 2;\n        if(!isecLS(line(p,p + DD(1.0)),lineseg(a,b)))continue;\n       \
-    \ if(a.y > b.y)swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
+    \ if(a.y > b.y)std::swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
     \ + DD(1.0),p.y)),line(a,b));\n            if(sign(q.x - p.x) == 1 && !(sign(q.x\
     \ - b.x) == 0 && sign(q.y - b.y) == 0))in = !in;\n        }\n        catch(...){continue;}\n\
     \    }\n    return in;\n}\n\nbool compare_x(const point a,const point b){\n  \
@@ -1008,9 +1008,9 @@ data:
     \ * cos,vv:v * sin\n            res.push_back(line(c.C + (uu + vv) * c.r,d.C -\
     \ (uu + vv) * d.r * DD(s)));\n            res.push_back(line(c.C + (uu - vv) *\
     \ c.r,d.C - (uu - vv) * d.r * DD(s)));\n        }\n    }\n    if(swaped)for(auto\
-    \ &a : res)swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\u534A\
-    \u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point q,DD\
-    \ d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
+    \ &a : res)std::swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\
+    \u534A\u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point\
+    \ q,DD d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
     \    if(sign(di) == 0 || pqM.norm() > d * d)return res;\n    point n = pqM * point(0,1)\
     \ * (sqrtl(pqM.norm() - d * d) / di);//\u30D9\u30AF\u30C8\u30EB\u309290\xB0\u56DE\
     \u8EE2\u3055\u305B\u3066\u6BD4\u3092\u304B\u3051\u308B\n    res.push_back(p +\
@@ -1061,7 +1061,7 @@ data:
     \  int n = po.n;\n    bool in = 0;\n    for(int i = 0;i < n;i++){\n        point\
     \ a = po[i];\n        point b = po[(i + 1) % n];\n        if(isecPS(p,lineseg(a,b)))return\
     \ 2;\n        if(!isecLS(line(p,p + DD(1.0)),lineseg(a,b)))continue;\n       \
-    \ if(a.y > b.y)swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
+    \ if(a.y > b.y)std::swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
     \ + DD(1.0),p.y)),line(a,b));\n            if(sign(q.x - p.x) == 1 && !(sign(q.x\
     \ - b.x) == 0 && sign(q.y - b.y) == 0))in = !in;\n        }\n        catch(...){continue;}\n\
     \    }\n    return in;\n}\n\nbool compare_x(const point a,const point b){\n  \
@@ -1125,8 +1125,8 @@ data:
   path: geometory/main.hpp
   requiredBy:
   - test/geometory/area_circle.cpp
-  timestamp: '2021-05-20 17:51:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-05-20 17:58:53+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometory/crosspoint_circle_line.test.cpp
   - test/geometory/tangent_circle.test.cpp

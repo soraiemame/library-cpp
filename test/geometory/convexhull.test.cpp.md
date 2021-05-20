@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: geometory/main.hpp
     title: geometory/main.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A
@@ -428,9 +428,9 @@ data:
     \ * cos,vv:v * sin\n            res.push_back(line(c.C + (uu + vv) * c.r,d.C -\
     \ (uu + vv) * d.r * DD(s)));\n            res.push_back(line(c.C + (uu - vv) *\
     \ c.r,d.C - (uu - vv) * d.r * DD(s)));\n        }\n    }\n    if(swaped)for(auto\
-    \ &a : res)swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\u534A\
-    \u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point q,DD\
-    \ d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
+    \ &a : res)std::swap(a.S,a.T);\n    return res;\n}\n\n//p\u3068q\u3092\u901A\u308B\
+    \u534A\u5F84d\u306E\u5186\u306E\u4E2D\u5FC3\nVP circlepointsradius(point p,point\
+    \ q,DD d){\n    VP res;\n    point pqM = (q - p) / DD(2.0);\n    DD di = pqM.abs();\n\
     \    if(sign(di) == 0 || pqM.norm() > d * d)return res;\n    point n = pqM * point(0,1)\
     \ * (sqrtl(pqM.norm() - d * d) / di);//\u30D9\u30AF\u30C8\u30EB\u309290\xB0\u56DE\
     \u8EE2\u3055\u305B\u3066\u6BD4\u3092\u304B\u3051\u308B\n    res.push_back(p +\
@@ -481,7 +481,7 @@ data:
     \  int n = po.n;\n    bool in = 0;\n    for(int i = 0;i < n;i++){\n        point\
     \ a = po[i];\n        point b = po[(i + 1) % n];\n        if(isecPS(p,lineseg(a,b)))return\
     \ 2;\n        if(!isecLS(line(p,p + DD(1.0)),lineseg(a,b)))continue;\n       \
-    \ if(a.y > b.y)swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
+    \ if(a.y > b.y)std::swap(a,b);\n        try{\n            point q = crosspointLL(line(p,point(p.x\
     \ + DD(1.0),p.y)),line(a,b));\n            if(sign(q.x - p.x) == 1 && !(sign(q.x\
     \ - b.x) == 0 && sign(q.y - b.y) == 0))in = !in;\n        }\n        catch(...){continue;}\n\
     \    }\n    return in;\n}\n\nbool compare_x(const point a,const point b){\n  \
@@ -542,7 +542,7 @@ data:
     \        }\n    }\n    return res;\n}\n\n#endif /*SORAIE_GEOMETORY_MAIN*/\n#line\
     \ 4 \"test/geometory/convexhull.test.cpp\"\n\nint main(){\n    int N;\n    std::cin\
     \ >> N;\n    VP vec(N);\n    for(int i = 0;i < N;i++)vec[i] = inputP();\n    auto\
-    \ ans = convexhull(vec);\n    int n = ans.size();\n    int from = 0;Point now\
+    \ ans = convexhull(vec);\n    int n = ans.size();\n    int from = 0;point now\
     \ = ans[0];\n    for(int i = 0;i < n;i++){\n        if(compare_y(ans[i],now)){\n\
     \            now = ans[i];\n            from = i;\n        }\n    }\n    std::cout\
     \ << n << \"\\n\";\n    for(int i = n;i > 0;i--){\n        std::cout << ans[(i\
@@ -550,7 +550,7 @@ data:
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A\"\
     \n\n#include \"../../geometory/main.hpp\"\n\nint main(){\n    int N;\n    std::cin\
     \ >> N;\n    VP vec(N);\n    for(int i = 0;i < N;i++)vec[i] = inputP();\n    auto\
-    \ ans = convexhull(vec);\n    int n = ans.size();\n    int from = 0;Point now\
+    \ ans = convexhull(vec);\n    int n = ans.size();\n    int from = 0;point now\
     \ = ans[0];\n    for(int i = 0;i < n;i++){\n        if(compare_y(ans[i],now)){\n\
     \            now = ans[i];\n            from = i;\n        }\n    }\n    std::cout\
     \ << n << \"\\n\";\n    for(int i = n;i > 0;i--){\n        std::cout << ans[(i\
@@ -560,8 +560,8 @@ data:
   isVerificationFile: true
   path: test/geometory/convexhull.test.cpp
   requiredBy: []
-  timestamp: '2021-05-20 17:51:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-05-20 18:01:47+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/convexhull.test.cpp
 layout: document
