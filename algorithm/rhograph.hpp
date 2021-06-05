@@ -26,3 +26,5 @@ struct RhoGraph{
         return x;
     }
 };
+
+#endif /*SORAIE_RHOGRAPH*/
