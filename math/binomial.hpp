@@ -18,7 +18,7 @@ struct binomial{
         for(int i = _fac.size();i < n + 10;i++){
             _fac.push_back(_fac[i - 1] * i);
             _inv.push_back(T(i).inv());
-            _finv[i].push_back(_finv[i - 1] * _inv[i]);
+            _finv.push_back(_finv[i - 1] * _inv[i]);
         }
     }
     T fac(int n){
