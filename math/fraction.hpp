@@ -51,9 +51,8 @@ struct rationary{
     inline bool operator!=(const rationary& a)const noexcept{return !(rationary(*this) == a);}
     inline bool operator<(const rationary& a)const noexcept{return __int128_t(num) * a.den < __int128_t(a.num) * den;}
     inline bool operator>(const rationary& a)const noexcept{return a < rationary(*this);}
-    inline bool operator<=(const rationary& a)const 
-    noexcept{return !(a > rationary(*this));}
-    inline bool operator>=(const rationary& a)const noexcept{return !(a < rationary(*this));}
+    inline bool operator<=(const rationary& a)const noexcept{return !(rationary(*this) > a);}
+    inline bool operator>=(const rationary& a)const noexcept{return !(rationary(*this) < a);}
     inline D to_D()const{return D(num) / den;}
 
     inline friend std::ostream& operator<<(std::ostream& os,const rationary& a){
