@@ -3,6 +3,7 @@
 "test/LIS.test.cpp": "2021-04-08 21:01:10 +0900",
 "test/NTT_1000000007.test.cpp": "2021-04-10 17:20:23 +0900",
 "test/NTT_998244353.test.cpp": "2021-04-10 17:20:23 +0900",
+"test/SegTree2D.test.cpp": "2021-12-20 10:11:30 +0900",
 "test/bigint/addition.test.cpp": "2021-03-27 17:13:24 +0900",
 "test/bigint/division.test.cpp": "2021-03-27 17:13:24 +0900",
 "test/bigint/multipication.test.cpp": "2021-03-27 17:13:24 +0900",
