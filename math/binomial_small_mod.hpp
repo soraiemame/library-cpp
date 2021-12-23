@@ -4,6 +4,7 @@
 #include <vector>
 #include "../atcoder/math.hpp"
 
+// reference: https://ferin-tech.hatenablog.com/entry/2018/01/17/010829
 struct binomial_pre {
     binomial_pre(int p, int q, int m) : p(p), q(q), m(m), fac(m), ifac(m) {
         fac[0] = 1;
