@@ -104,6 +104,12 @@ data:
       path: data-structure/lichaotree.hpp
       title: data-structure/lichaotree.hpp
     - icon: ':heavy_check_mark:'
+      path: data-structure/persistent_array.hpp
+      title: data-structure/persistent_array.hpp
+    - icon: ':heavy_check_mark:'
+      path: data-structure/persistent_unionfind.hpp
+      title: data-structure/persistent_unionfind.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/segtree.hpp
       title: data-structure/segtree.hpp
     - icon: ':heavy_check_mark:'
@@ -287,6 +293,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/minimum_spanning_tree.test.cpp
       title: test/minimum_spanning_tree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/persistent_queue.test.cpp
+      title: test/persistent_queue.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/persistent_unionfind.test.cpp
+      title: test/persistent_unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/prime.test.cpp
       title: test/prime.test.cpp
