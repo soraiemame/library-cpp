@@ -112,7 +112,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segtree.hpp
       title: data-structure/segtree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse_table.hpp
       title: data-structure/sparse_table.hpp
     - icon: ':heavy_check_mark:'
@@ -308,7 +308,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segtree.test.cpp
       title: test/segtree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/sparse_table.test.cpp
       title: test/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'
