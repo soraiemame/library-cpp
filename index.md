@@ -112,7 +112,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segtree.hpp
       title: data-structure/segtree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/sparse_table.hpp
       title: data-structure/sparse_table.hpp
     - icon: ':heavy_check_mark:'
@@ -196,9 +196,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/modint.hpp
       title: math/modint.hpp
-    - icon: ':warning:'
-      path: math/modulo.hpp
-      title: math/modulo.hpp
     - icon: ':warning:'
       path: math/parse.hpp
       title: math/parse.hpp
@@ -311,7 +308,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segtree.test.cpp
       title: test/segtree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/sparse_table.test.cpp
       title: test/sparse_table.test.cpp
     - icon: ':heavy_check_mark:'

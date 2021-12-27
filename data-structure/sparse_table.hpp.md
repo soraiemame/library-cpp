@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/sparse_table.test.cpp
     title: test/sparse_table.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/sparse_table.hpp\"\n\n\n\n#include <vector>\n\
@@ -17,11 +17,11 @@ data:
     \ table_){\n        n = table_.size();\n        int log = 1;\n        while(1\
     \ << log < n)log++;\n        table = std::vector<std::vector<T>>(log,std::vector<T>(n));\n\
     \        for(int i = 0;i < n;i++)table[0][i] = table_[i];\n        for(int i =\
-    \ 1;i < log;i++){\n            for(int j = 0;j + (1 << i - 1) < n;j++){\n    \
-    \            table[i][j] = std::min(table[i - 1][j],table[i - 1][j + (1 << i -\
-    \ 1)]);\n            }\n        }\n    }\n    T query(int l,int r){\n        assert(l\
-    \ < r);\n        int log = 0;\n        while(1 << (log + 1) < r - l)log++;\n \
-    \       return std::min(table[log][l],table[log][r - (1 << log)]);\n    }\n};\n\
+    \ 1;i < log;i++){\n            for(int j = 0;j + (1 << (i - 1)) < n;j++){\n  \
+    \              table[i][j] = std::min(table[i - 1][j],table[i - 1][j + (1 << (i\
+    \ - 1))]);\n            }\n        }\n    }\n    T query(int l,int r){\n     \
+    \   assert(l < r);\n        int log = 0;\n        while(1 << (log + 1) < r - l)log++;\n\
+    \        return std::min(table[log][l],table[log][r - (1 << log)]);\n    }\n};\n\
     \n\n"
   code: "#ifndef SORAIE_SPARSE_TABLE\n#define SORAIE_SPARSE_TABLE\n\n#include <vector>\n\
     #include <algorithm>\n#include <assert.h>\n\ntemplate<class T>\nstruct SparseTable{\n\
@@ -29,18 +29,18 @@ data:
     \ table_){\n        n = table_.size();\n        int log = 1;\n        while(1\
     \ << log < n)log++;\n        table = std::vector<std::vector<T>>(log,std::vector<T>(n));\n\
     \        for(int i = 0;i < n;i++)table[0][i] = table_[i];\n        for(int i =\
-    \ 1;i < log;i++){\n            for(int j = 0;j + (1 << i - 1) < n;j++){\n    \
-    \            table[i][j] = std::min(table[i - 1][j],table[i - 1][j + (1 << i -\
-    \ 1)]);\n            }\n        }\n    }\n    T query(int l,int r){\n        assert(l\
-    \ < r);\n        int log = 0;\n        while(1 << (log + 1) < r - l)log++;\n \
-    \       return std::min(table[log][l],table[log][r - (1 << log)]);\n    }\n};\n\
+    \ 1;i < log;i++){\n            for(int j = 0;j + (1 << (i - 1)) < n;j++){\n  \
+    \              table[i][j] = std::min(table[i - 1][j],table[i - 1][j + (1 << (i\
+    \ - 1))]);\n            }\n        }\n    }\n    T query(int l,int r){\n     \
+    \   assert(l < r);\n        int log = 0;\n        while(1 << (log + 1) < r - l)log++;\n\
+    \        return std::min(table[log][l],table[log][r - (1 << log)]);\n    }\n};\n\
     \n#endif /*SORAIE_SPARSE_TABLE*/"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/sparse_table.hpp
   requiredBy: []
-  timestamp: '2021-02-08 12:56:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-12-27 21:52:23+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/sparse_table.test.cpp
 documentation_of: data-structure/sparse_table.hpp
