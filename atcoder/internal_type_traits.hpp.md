@@ -3,9 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: algorithm/inversion_number.hpp
+    title: algorithm/inversion_number.hpp
+  - icon: ':heavy_check_mark:'
     path: atcoder/convolution.hpp
     title: atcoder/convolution.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/fenwicktree.hpp
     title: atcoder/fenwicktree.hpp
   - icon: ':heavy_check_mark:'
@@ -24,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/bigint/remainder.test.cpp
     title: test/bigint/remainder.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/inversion_number.test.cpp
+    title: test/inversion_number.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -124,9 +130,11 @@ data:
   - atcoder/modint.hpp
   - atcoder/convolution.hpp
   - atcoder/fenwicktree.hpp
+  - algorithm/inversion_number.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/inversion_number.test.cpp
   - test/bigint/remainder.test.cpp
   - test/bigint/division.test.cpp
   - test/bigint/multipication.test.cpp

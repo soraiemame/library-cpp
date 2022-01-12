@@ -4,11 +4,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: algorithm/inversion_number.hpp
+    title: algorithm/inversion_number.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/inversion_number.test.cpp
+    title: test/inversion_number.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Fenwick_tree
@@ -85,10 +91,12 @@ data:
   - atcoder/internal_type_traits.hpp
   isVerificationFile: false
   path: atcoder/fenwicktree.hpp
-  requiredBy: []
+  requiredBy:
+  - algorithm/inversion_number.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/inversion_number.test.cpp
 documentation_of: atcoder/fenwicktree.hpp
 layout: document
 redirect_from:

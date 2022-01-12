@@ -26,7 +26,7 @@ data:
     - icon: ':warning:'
       path: atcoder/dsu.hpp
       title: atcoder/dsu.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
     - icon: ':heavy_check_mark:'

@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: test/sparse_table.test.cpp
   requiredBy: []
-  timestamp: '2021-02-08 12:56:32+09:00'
+  timestamp: '2021-12-27 21:52:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/sparse_table.test.cpp
