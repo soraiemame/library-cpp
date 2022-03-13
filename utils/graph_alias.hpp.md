@@ -50,17 +50,17 @@ data:
   isVerificationFile: false
   path: utils/graph_alias.hpp
   requiredBy:
-  - graph/dijkstra.hpp
-  - graph/spfa.hpp
   - test/graph/abstract_dijkstra.cpp
   - algorithm/minimum_spanning_tree.hpp
+  - graph/spfa.hpp
+  - graph/dijkstra.hpp
   timestamp: '2021-03-31 10:49:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/minimum_spanning_tree.test.cpp
+  - test/graph/spfa.test.cpp
   - test/graph/dijkstra.test.cpp
   - test/graph/dijkstra2.test.cpp
-  - test/graph/spfa.test.cpp
-  - test/minimum_spanning_tree.test.cpp
 documentation_of: utils/graph_alias.hpp
 layout: document
 redirect_from:

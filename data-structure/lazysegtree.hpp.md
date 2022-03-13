@@ -150,9 +150,9 @@ data:
   - test/range-queries/RMQ_RAQ_1.test.cpp
   - test/range-queries/RSQ_RUQ_1.test.cpp
   - test/range-queries/RAQ_1.test.cpp
-  - test/range-queries/RSQ_RAQ_1.test.cpp
-  - test/range-queries/RUQ_1.test.cpp
   - test/range-queries/RMQ_RUQ_1.test.cpp
+  - test/range-queries/RUQ_1.test.cpp
+  - test/range-queries/RSQ_RAQ_1.test.cpp
 documentation_of: data-structure/lazysegtree.hpp
 layout: document
 redirect_from:

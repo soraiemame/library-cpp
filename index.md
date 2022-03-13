@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: algorithm/LIS_LDS.hpp
       title: algorithm/LIS_LDS.hpp
+    - icon: ':warning:'
+      path: algorithm/Mo.hpp
+      title: algorithm/Mo.hpp
     - icon: ':heavy_check_mark:'
       path: algorithm/RSQ.hpp
       title: algorithm/RSQ.hpp

@@ -190,18 +190,18 @@ data:
   isVerificationFile: false
   path: atcoder/internal_math.hpp
   requiredBy:
+  - math/binomial_small_mod.hpp
   - atcoder/modint.hpp
   - atcoder/math.hpp
   - atcoder/convolution.hpp
-  - math/binomial_small_mod.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/binomial_small_mod.test.cpp
-  - test/bigint/remainder.test.cpp
   - test/bigint/division.test.cpp
   - test/bigint/multipication.test.cpp
+  - test/bigint/remainder.test.cpp
   - test/bigint/multipication2.test.cpp
+  - test/binomial_small_mod.test.cpp
 documentation_of: atcoder/internal_math.hpp
 layout: document
 redirect_from:

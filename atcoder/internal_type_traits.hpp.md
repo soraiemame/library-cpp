@@ -128,17 +128,17 @@ data:
   path: atcoder/internal_type_traits.hpp
   requiredBy:
   - atcoder/modint.hpp
-  - atcoder/convolution.hpp
   - atcoder/fenwicktree.hpp
+  - atcoder/convolution.hpp
   - algorithm/inversion_number.hpp
   timestamp: '2021-03-22 15:07:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/inversion_number.test.cpp
-  - test/bigint/remainder.test.cpp
   - test/bigint/division.test.cpp
   - test/bigint/multipication.test.cpp
+  - test/bigint/remainder.test.cpp
   - test/bigint/multipication2.test.cpp
+  - test/inversion_number.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document
 redirect_from:

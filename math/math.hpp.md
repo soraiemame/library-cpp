@@ -49,8 +49,8 @@ data:
   timestamp: '2021-02-08 12:56:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/NTT_998244353.test.cpp
   - test/NTT_1000000007.test.cpp
+  - test/NTT_998244353.test.cpp
 documentation_of: math/math.hpp
 layout: document
 redirect_from:

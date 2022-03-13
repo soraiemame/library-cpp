@@ -106,8 +106,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/matrix.test.cpp
-  - test/NTT_998244353.test.cpp
   - test/NTT_1000000007.test.cpp
+  - test/NTT_998244353.test.cpp
 documentation_of: math/modint.hpp
 layout: document
 redirect_from:
